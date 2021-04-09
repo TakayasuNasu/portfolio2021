@@ -1,0 +1,17 @@
+version: '2'
+
+services:
+  gatsby:
+    image: node:15.14-alpine
+    container_name: mysite
+    volumes:
+      - ./:/home/app
+      - modules:/home/app/node_modules
+    working_dir: /home/app
+    command: [sh, -c, yarn install && sh]
+    ports:
+      - "33333:8000"
+    stdin_open: true
+
+volumes:
+  modules:

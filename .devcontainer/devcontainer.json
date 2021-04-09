@@ -1,0 +1,13 @@
+{
+  "name": "TypeScript-Gatsby",
+  "dockerComposeFile": [
+    "../docker-compose.yml",
+  ],
+  "service": "gatsby",
+  "workspaceFolder": "/home/app",
+  "forwardPorts": [8000],
+  "extensions": [
+    "esbenp.prettier-vscode"
+  ],
+  "shutdownAction": "none"
+}
