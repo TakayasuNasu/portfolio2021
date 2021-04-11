@@ -1,12 +1,11 @@
 import React from 'react'
 import type { FC } from 'react'
 import { Link } from 'gatsby'
-import Layout from '../components/layout'
 
 const Page: FC = () => (
-  <Layout>
-    <h1>About</h1>
+  <div>
+    <h1>404 Not Found</h1>
     <Link to="/">Home</Link>
-  </Layout>
+  </div>
 )
 export default Page
