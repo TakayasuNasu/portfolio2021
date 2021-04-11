@@ -62,7 +62,7 @@ const Div = styled.div`
 
 type ComponentProps = { isExpanded: Boolean }
 
-const MenuButon = ({ isExpanded = false }: ComponentProps) => {
+const MenuButon: FC<ComponentProps> = ({ isExpanded = false }) => {
   return (
     <Div active={isExpanded}>
       <span className="span"></span>

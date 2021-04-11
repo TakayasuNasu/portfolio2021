@@ -18,16 +18,13 @@ export default (props) => {
   `)
 
   return (
-    <figure>
-      <Img
-        fluid={
-          allImageSharp.nodes.find(
-            (n) => n.fluid.originalName == props.filename
-          ).fluid
-        }
-        alt={props.alt}
-        style={props.style}
-      />
-    </figure>
+    <Img
+      fluid={
+        allImageSharp.nodes.find((n) => n.fluid.originalName == props.filename)
+          .fluid
+      }
+      alt={props.alt}
+      style={props.style}
+    />
   )
 }
