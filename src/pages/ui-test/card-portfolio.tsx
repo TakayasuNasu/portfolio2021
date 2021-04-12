@@ -1,13 +1,11 @@
 import React from 'react'
 import type { FC } from 'react'
-import '../../styles/common.scss'
-import Card from '../../components/molecules/card/portfolio'
+import Layout from '../../components/layout'
+import PortfolioBlock from '../../components/organisms/blocks/portfolio'
 
 const Page: FC = () => (
-  <ul>
-    <li>
-      <Card />
-    </li>
-  </ul>
+  <Layout>
+    <PortfolioBlock />
+  </Layout>
 )
 export default Page

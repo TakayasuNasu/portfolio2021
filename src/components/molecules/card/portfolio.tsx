@@ -10,6 +10,9 @@ import { vw, pseudo } from '../../../util/styled-util'
 const Wrapper = styled.div`
   width: ${vw(324)};
   ${media.greaterThan('medium')`
+    width: 340px;
+  `}
+  ${media.greaterThan('large')`
     width: 292px;
   `}
 `
@@ -19,6 +22,9 @@ const VisualBlock = styled.div`
   width: 100%;
   height: ${vw(212)};
   ${media.greaterThan('medium')`
+    height: 222px;
+  `}
+  ${media.greaterThan('large')`
     height: 190px;
   `}
   figure.image {
@@ -48,6 +54,7 @@ const Div = styled.div`
   padding: 11px 30px;
   text-align: right;
   font-size: 22px;
+  background-color: #ffffff;
   a {
     color: #848484;
     & + a {
@@ -72,13 +79,13 @@ const Card: FC<ComponentProps> = ({
   img = 's-portal.png',
   title = 'S-Portal',
   siteUrl = '',
-  pageUrl = '',
+  pageUrl = '/',
 }) => {
   return (
     <Wrapper>
       <VisualBlock>
         <figure className="image">
-          <Image filename={img} alt="s-portal" style={objectFit} />
+          <Image filename={img} alt={title} style={objectFit} />
         </figure>
         <span className="title">{title}</span>
       </VisualBlock>
