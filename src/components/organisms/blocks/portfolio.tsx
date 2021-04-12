@@ -29,12 +29,12 @@ const Section = styled.section`
   }
 `
 
-// 340 270
 const UL = styled.ul`
   display: grid;
   grid-gap: 20px;
   grid-auto-rows: ${vw(260)};
-  grid-template-columns: repeat(auto-fill, ${vw(325)});
+  grid-template-columns: repeat(auto-fit, ${vw(325)});
+  justify-content: center;
   margin-top: 25px;
   margin-left: auto;
   margin-right: auto;
@@ -75,10 +75,9 @@ const Portfolio = () => (
       <H3>Portfolio</H3>
       <ul className="list">
         <li>ALL</li>
-        <li>BRANDING</li>
-        <li>DESIGN</li>
-        <li>PHOTO</li>
-        <li>WEB</li>
+        <li>SYSTEM</li>
+        <li>CMS</li>
+        <li>GAME</li>
       </ul>
     </div>
     <UL>{Cards}</UL>
