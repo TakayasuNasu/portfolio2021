@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState, useRef } from 'react'
 import type { FC } from 'react'
 import styled from 'styled-components'
 import media from 'styled-media-query'
@@ -23,8 +23,14 @@ const Section = styled.section`
     ${media.greaterThan('medium')`
       margin-top: 0;
     `}
-    li + li {
-      padding-left: 15px;
+    li {
+      cursor: pointer;
+      & + li {
+        padding-left: 15px;
+      }
+      &.active {
+        color: #2879ff;
+      }
     }
   }
 `
@@ -53,35 +59,61 @@ const UL = styled.ul`
     width: 100%;
   `}
   li.card {
+    @keyframes show {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
     box-shadow: 0 2px 2px 0 rgb(0 0 0 / 3%), 0 3px 1px -2px rgb(0 0 0 / 3%),
       0 1px 5px 0 rgb(0 0 0 / 3%);
+    animation: show 0.3s linear 0s;
+    &.hide {
+      display: none;
+    }
   }
 `
 
-const Cards = Data.map((data, i) => (
-  <li className="card" key={i + data.title}>
-    <Card
-      img={data.img}
-      title={data.title}
-      siteUrl={data.siteUrl}
-      pageUrl={data.pageUrl}
-    />
-  </li>
-))
+const Portfolio = () => {
+  const [type, setType] = useState('ALL')
+  const handleClick = (e) => {
+    setType(e.target.innerHTML)
+  }
 
-const Portfolio = () => (
-  <Section>
-    <div className="header">
-      <H3>Portfolio</H3>
-      <ul className="list">
-        <li>ALL</li>
-        <li>SYSTEM</li>
-        <li>CMS</li>
-        <li>GAME</li>
-      </ul>
-    </div>
-    <UL>{Cards}</UL>
-  </Section>
-)
+  const Cards = Data.map((data, i) => {
+    let className = type != 'ALL' ? (data.type != type ? 'hide' : '') : ''
+    return (
+      <li className={`card ${className}`} key={i + data.title}>
+        <Card
+          img={data.img}
+          title={data.title}
+          siteUrl={data.siteUrl}
+          pageUrl={data.pageUrl}
+        />
+      </li>
+    )
+  })
+
+  const menu = ['ALL', 'SYSTEM', 'CMS', 'GAME'].map((text) => {
+    const className = type == text ? 'active' : ''
+    return (
+      <li className={className} onClick={(e) => handleClick(e)} key={text}>
+        {text}
+      </li>
+    )
+  })
+
+  return (
+    <Section>
+      <div className="header">
+        <H3>Portfolio</H3>
+        <ul className="list">{menu}</ul>
+      </div>
+      <UL>{Cards}</UL>
+    </Section>
+  )
+}
 
 export default Portfolio
