@@ -27,10 +27,10 @@ const HeaderStyle = styled.header`
     height: 100%;
     ${media.greaterThan('medium')`
       ${contentsSizeMedium}
-   `}
+    `}
     ${media.greaterThan('large')`
       ${contentsSizeLarge}
-   `}
+    `}
   }
 `
 

@@ -20,6 +20,9 @@
 .cache/
 public/
 
+# gatsby-plugin-graphql-codegen
+types/graphql-types.d.ts
+
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*

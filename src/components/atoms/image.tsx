@@ -10,7 +10,13 @@ export default (props) => {
         nodes {
           fluid(maxWidth: 1920) {
             originalName
-            ...GatsbyImageSharpFluid_withWebp
+            base64
+            aspectRatio
+            src
+            srcSet
+            srcWebp
+            srcSetWebp
+            sizes
           }
         }
       }

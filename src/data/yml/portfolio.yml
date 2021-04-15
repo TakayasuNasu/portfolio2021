@@ -2,14 +2,14 @@
   img: s-portal.png
   title: S-Portal
   siteUrl: ''
-  pageUrl: /
+  pageUrl: /portfolio/s-portal
   type: CMS
 
 - id: 2
   img: feedlp01.png
   title: FeedLP
   siteUrl: ''
-  pageUrl: /
+  pageUrl: /portfolio/feedlp
   type: SYSTEM
 
 - id: 3

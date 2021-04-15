@@ -1,8 +1,5 @@
 {
-  "include": [
-    "./src/**/*",
-    "./gatsby-*.ts"
-  ],
+  "include": ["./src/**/*", "./gatsby-*.ts"],
   "compilerOptions": {
     "target": "es2019",
     "module": "commonjs",
@@ -10,6 +7,9 @@
     "jsx": "react",
     "strict": true,
     "esModuleInterop": true,
-    "baseUrl": "."
+    "baseUrl": ".",
+    "paths": {
+      "graphql-types": ["types/graphql-types", "types/graphql-types-stub"]
+    }
   }
 }
