@@ -14,7 +14,9 @@ width: 45px;
 height: 5px;
 `
 
-const Div = styled.div`
+type StyledProps = { active: Boolean }
+
+const Div = styled.div<StyledProps>`
   display: flex;
   align-items: center;
   width: 50px;
@@ -45,14 +47,14 @@ const Div = styled.div`
     }
     &::before {
       top: ${(props) => (props.active ? 0 : '-24px')};
-      ${media.greaterThan('medium')`
+      ${media.greaterThan<StyledProps>('medium')`
         top: ${(props) => (props.active ? 0 : '-22px')};
       `}
       transform: ${(props) => (props.active ? 'rotate(45deg)' : 'none')};
     }
     &::after {
       bottom: ${(props) => (props.active ? 0 : '-24px')};
-      ${media.greaterThan('medium')`
+      ${media.greaterThan<StyledProps>('medium')`
         bottom: ${(props) => (props.active ? 0 : '-22px')};
       `}
       transform: ${(props) => (props.active ? 'rotate(-45deg)' : 'none')};
@@ -60,7 +62,7 @@ const Div = styled.div`
   }
 `
 
-type ComponentProps = { isExpanded: Boolean }
+type ComponentProps = { isExpanded?: Boolean }
 
 const MenuButon: FC<ComponentProps> = ({ isExpanded = false }) => {
   return (

@@ -11,6 +11,15 @@ import {
   contentsSizeLarge,
 } from '../util/styled-util'
 
+const EmptyBleck = styled.div`
+  height: 70px;
+  background-color: rgba(255, 255, 255, 0.8);
+  ${media.greaterThan('medium')`
+  `}
+  ${media.greaterThan('large')`
+  `}
+`
+
 const HeaderStyle = styled.header`
   position: fixed;
   z-index: 10;
@@ -35,13 +44,16 @@ const HeaderStyle = styled.header`
 `
 
 const Header: FC = () => (
-  <HeaderStyle>
-    <nav className="inner">
-      <H1>@TakayasuNasu</H1>
-      <ContactButton>contact</ContactButton>
-      <MenuButton />
-    </nav>
-  </HeaderStyle>
+  <React.Fragment>
+    <HeaderStyle>
+      <nav className="inner">
+        <H1>@TakayasuNasu</H1>
+        <ContactButton>contact</ContactButton>
+        <MenuButton />
+      </nav>
+    </HeaderStyle>
+    <EmptyBleck />
+  </React.Fragment>
 )
 
 export default Header

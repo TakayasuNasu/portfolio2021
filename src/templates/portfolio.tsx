@@ -13,17 +13,24 @@ import { AiOutlineTeam, AiOutlineTag } from 'react-icons/ai'
 import { HiOutlineArrowLeft, HiOutlineArrowRight } from 'react-icons/hi'
 
 import Layout from '../components/layout'
+import MV from '../components/atoms/mv'
 import H3 from '../components/atoms/headline/h3'
 import Button from '../components/atoms/button/contact'
 import Image from '../components/atoms/image'
+import { vw } from '../util/styled-util'
 import type { PortfolioPageContext } from '../../gatsby-node'
 import type { PortfolioTemplateQuery } from '../../types/graphql-types'
 
 SwiperCore.use([Pagination])
 
 const Section = styled.section`
+  margin-top: ${vw(-220)};
   background-color: #ffffff;
+  ${media.greaterThan('medium')`
+    margin-top: -400px;
+  `}
   ul.list {
+    padding-top: 50px;
     padding-left: 15px;
     padding-right: 15px;
     ${media.greaterThan('medium')`
@@ -31,11 +38,11 @@ const Section = styled.section`
       padding-right: 20px;
     `}
     ${media.greaterThan('large')`
-      display: flex;
+      display: grid;
+      grid-template-columns: 38% 38% auto;
     `}
     li {
       ${media.greaterThan('large')`
-        width: 33.3%;
         padding-left: 15px;
         padding-right: 15px;
       `}
@@ -71,6 +78,7 @@ const Section = styled.section`
   }
 
   div.pre-post {
+    margin-top: 30px;
     padding-top: 30px;
     padding-bottom: 30px;
     padding-left: 30px;
@@ -105,7 +113,7 @@ interface PageProps {
 }
 
 const Page: FC<PageProps> = ({ data }) => (
-  <Layout>
+  <Layout mv={<MV />}>
     <Section>
       <Swiper pagination={{ clickable: true }}>
         <SwiperSlide>
@@ -170,14 +178,6 @@ const Page: FC<PageProps> = ({ data }) => (
           </li>
         </ul>
       </div>
-      <h1 className="article-title">
-        {data.mdx?.frontmatter?.title ?? '(無題)'}
-      </h1>
-      {data.mdx?.frontmatter?.date && (
-        <p className="article-date">{data.mdx.frontmatter.date} 投稿</p>
-      )}
-      <hr />
-      <MDXRenderer>{data.mdx?.body ?? ''}</MDXRenderer>
     </Section>
   </Layout>
 )

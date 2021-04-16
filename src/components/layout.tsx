@@ -25,9 +25,12 @@ const Main = styled.main`
   `}
 `
 
-const Layout: FC = ({ children }) => (
+type ComponentProps = { mv?: any }
+
+const Layout: FC<ComponentProps> = ({ mv, children }) => (
   <React.Fragment>
     <Header />
+    <section className="mv">{mv}</section>
     <Main className="container">{children}</Main>
   </React.Fragment>
 )
