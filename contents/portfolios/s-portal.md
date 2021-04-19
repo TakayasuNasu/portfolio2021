@@ -1,13 +1,24 @@
 ---
 title: 's-portal'
 slug: /s-portal
-date: 2020-12-08T00:00:00
+date: Jun 2019 - August 2020
+info: SPA for centralized management of knowledge related to site production, accessed daily by 80% of all employees
+techStack: Vue/SPA/Graphql/Laravel/Docker
+type: CMS
+client: Medix
+link: ''
+files:
+  - s-portal.png
+  - feedlp01.png
 ---
 
-import H1 from '../../src/components/atoms/headline/h1.tsx'
+import PrePostNav from '../../src/components/molecules/pre-post-nav.tsx'
 
-# こんにちは
+export const params = {
+preUrl: '/portfolio/momoko-planet',
+postUrl: '/portfolio/feedlp',
+preText: 'MOMOKO Planet',
+postText: 'Feed LP',
+}
 
-最初の投稿です。よろしくお願いします。
-
-<H1>S-portal</H1>
+<PrePostNav {...params} />

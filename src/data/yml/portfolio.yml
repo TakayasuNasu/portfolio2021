@@ -8,7 +8,7 @@
 - id: 2
   img: feedlp01.png
   title: FeedLP
-  siteUrl: ''
+  siteUrl: https://www.itstaffing.jp/lp/fd002
   pageUrl: /portfolio/feedlp
   type: SYSTEM
 
@@ -16,33 +16,33 @@
   img: lp-wordpress1.png
   title: Landing Page and Wordpress
   siteUrl: ''
-  pageUrl: /
+  pageUrl: /portfolio/lp-wordpress
   type: CMS
 
 - id: 4
   img: original-cms01.jpg
   title: Original CMS
-  siteUrl: ''
-  pageUrl: /
+  siteUrl: https://www.pharmaproduct.co.jp
+  pageUrl: /portfolio/original-cms
   type: CMS
 
 - id: 5
   img: social-game01.png
   title: Social game applications
   siteUrl: ''
-  pageUrl: /
+  pageUrl: /portfolio/social-game
   type: GAME
 
 - id: 6
   img: video-on-demand01.png
   title: Video On Demand
-  siteUrl: ''
-  pageUrl: /
+  siteUrl: https://www.hikaritv.net
+  pageUrl: /portfolio/hikari-tv
   type: SYSTEM
 
 - id: 7
   img: momokoplanet01.png
   title: Momoko Planet
   siteUrl: ''
-  pageUrl: /
+  pageUrl: /portfolio/momoko-planet
   type: CMS

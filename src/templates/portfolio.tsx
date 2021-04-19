@@ -10,12 +10,11 @@ import 'swiper/swiper.min.css'
 import 'swiper/components/pagination/pagination.min.css'
 import { MdDateRange } from 'react-icons/md'
 import { AiOutlineTeam, AiOutlineTag } from 'react-icons/ai'
-import { HiOutlineArrowLeft, HiOutlineArrowRight } from 'react-icons/hi'
 
 import Layout from '../components/layout'
 import MV from '../components/atoms/mv'
 import H3 from '../components/atoms/headline/h3'
-import Button from '../components/atoms/button/contact'
+import Button from '../components/atoms/button/base'
 import Image from '../components/atoms/image'
 import { vw } from '../util/styled-util'
 import type { PortfolioPageContext } from '../../gatsby-node'
@@ -71,38 +70,7 @@ const Section = styled.section`
     }
     dd {
       margin-left: 10px;
-    }
-  }
-  p.button-text {
-    font-size: 16px;
-  }
-
-  div.pre-post {
-    margin-top: 30px;
-    padding-top: 30px;
-    padding-bottom: 30px;
-    padding-left: 30px;
-    padding-right: 30px;
-    background-color: #2879ff;
-    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.03),
-      0 3px 1px -2px rgba(0, 0, 0, 0.03), 0 1px 5px 0 rgba(0, 0, 0, 0.03);
-  }
-  ul.pre-post-list {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    a {
-      display: flex;
-      color: #ffffff;
-      text-decoration: none;
-    }
-    span {
-      display: none;
-      padding-left: 8px;
-      padding-right: 8px;
-      ${media.greaterThan('medium')`
-        display: block;
-      `}
+      line-height: 1.5;
     }
   }
 `
@@ -112,75 +80,60 @@ interface PageProps {
   pageContext: PortfolioPageContext
 }
 
-const Page: FC<PageProps> = ({ data }) => (
-  <Layout mv={<MV />}>
-    <Section>
-      <Swiper pagination={{ clickable: true }}>
-        <SwiperSlide>
-          <Image filename="s-portal.png" />
-        </SwiperSlide>
-        <SwiperSlide>
-          <Image filename="feedlp01.png" />
-        </SwiperSlide>
-      </Swiper>
-      <ul className="list">
-        <li>
-          <H3 color="#444444">Main Info</H3>
-          <p className="text">
-            Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin,
-            lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis
-            sem nibh id elit.
-          </p>
-        </li>
-        <li>
-          <H3 color="#444444">Client</H3>
-          <p className="text">
-            Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin,
-            lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis
-            sem nibh id elit.
-          </p>
-        </li>
-        <li>
-          <Button>WEBSITE</Button>
-          <dl className="d-list first">
-            <dt>
-              <MdDateRange />
-            </dt>
-            <dd>{data.mdx?.frontmatter?.date ?? ''}</dd>
-          </dl>
-          <dl className="d-list">
-            <dt>
-              <AiOutlineTeam />
-            </dt>
-            <dd>Themeforest</dd>
-          </dl>
-          <dl className="d-list">
-            <dt>
-              <AiOutlineTag />
-            </dt>
-            <dd>Design</dd>
-          </dl>
-        </li>
-      </ul>
-      <div className="pre-post">
-        <ul className="pre-post-list">
+const Page: FC<PageProps> = ({ data }) => {
+  const SwiperItems = data.mdx?.frontmatter?.files?.map((filename) => (
+    <SwiperSlide>
+      <Image filename={filename} />
+    </SwiperSlide>
+  ))
+
+  const disabled = data.mdx?.frontmatter?.link ? false : true
+  const linkProps = {
+    to: data.mdx?.frontmatter?.link as string,
+    isExternal: true,
+    disabled: disabled,
+  }
+
+  return (
+    <Layout mv={<MV />}>
+      <Section>
+        <Swiper pagination={{ clickable: true }}>{SwiperItems}</Swiper>
+        <ul className="list">
           <li>
-            <Link to="/">
-              <HiOutlineArrowLeft />
-              <span>pre</span>
-            </Link>
+            <H3 color="#444444">Main Info</H3>
+            <p className="text">{data.mdx?.frontmatter?.info ?? ''}</p>
           </li>
           <li>
-            <Link to="/">
-              <span>post</span>
-              <HiOutlineArrowRight />
-            </Link>
+            <H3 color="#444444">Tech Stack</H3>
+            <p className="text">{data.mdx?.frontmatter?.techStack ?? ''}</p>
+          </li>
+          <li>
+            <Button {...linkProps}>WEBSITE</Button>
+            <dl className="d-list first">
+              <dt>
+                <MdDateRange />
+              </dt>
+              <dd>{data.mdx?.frontmatter?.date ?? ''}</dd>
+            </dl>
+            <dl className="d-list">
+              <dt>
+                <AiOutlineTeam />
+              </dt>
+              <dd>{data.mdx?.frontmatter?.client ?? ''}</dd>
+            </dl>
+            <dl className="d-list">
+              <dt>
+                <AiOutlineTag />
+              </dt>
+              <dd>{data.mdx?.frontmatter?.type ?? ''}</dd>
+            </dl>
           </li>
         </ul>
-      </div>
-    </Section>
-  </Layout>
-)
+        <MDXRenderer>{data.mdx?.body ?? ''}</MDXRenderer>
+      </Section>
+    </Layout>
+  )
+}
 export default Page
 
 export const query = graphql`
@@ -189,7 +142,13 @@ export const query = graphql`
       body
       frontmatter {
         title
-        date(formatString: "YYYY/MM/DD", locale: "en-CA")
+        date
+        info
+        techStack
+        type
+        client
+        link
+        files
       }
     }
   }

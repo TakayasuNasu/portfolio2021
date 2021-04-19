@@ -7,7 +7,7 @@ import { vw } from '../../util/styled-util'
 const Section = styled.section`
   position: relative;
   width: 100%;
-  height: ${vw(280)};
+  height: ${vw(220)};
   background-image: linear-gradient(135deg, #6b73ff 10%, #000dff 100%);
   ${media.greaterThan('medium')`
   height: 480px;

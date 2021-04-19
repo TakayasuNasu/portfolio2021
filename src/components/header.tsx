@@ -1,5 +1,6 @@
 import React from 'react'
 import type { FC } from 'react'
+import { Link } from 'gatsby'
 import styled from 'styled-components'
 import media from 'styled-media-query'
 import H1 from './atoms/headline/h1'
@@ -40,6 +41,10 @@ const HeaderStyle = styled.header`
     ${media.greaterThan('large')`
       ${contentsSizeLarge}
     `}
+    a {
+      color: #898989;
+      text-decoration: none;
+    }
   }
 `
 
@@ -47,7 +52,9 @@ const Header: FC = () => (
   <React.Fragment>
     <HeaderStyle>
       <nav className="inner">
-        <H1>@TakayasuNasu</H1>
+        <H1>
+          <Link to="/">@TakayasuNasu</Link>
+        </H1>
         <ContactButton>contact</ContactButton>
         <MenuButton />
       </nav>
