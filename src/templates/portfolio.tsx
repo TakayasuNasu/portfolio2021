@@ -23,11 +23,7 @@ import type { PortfolioTemplateQuery } from '../../types/graphql-types'
 SwiperCore.use([Pagination])
 
 const Section = styled.section`
-  margin-top: ${vw(-220)};
   background-color: #ffffff;
-  ${media.greaterThan('medium')`
-    margin-top: -400px;
-  `}
   ul.list {
     padding-top: 50px;
     padding-left: 15px;
@@ -82,7 +78,7 @@ interface PageProps {
 
 const Page: FC<PageProps> = ({ data }) => {
   const SwiperItems = data.mdx?.frontmatter?.files?.map((filename) => (
-    <SwiperSlide>
+    <SwiperSlide key={filename}>
       <Image filename={filename} />
     </SwiperSlide>
   ))

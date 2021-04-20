@@ -10,14 +10,17 @@ import {
   contentsSizeSmall,
   contentsSizeMedium,
   contentsSizeLarge,
+  vw,
 } from '../util/styled-util'
 
 const Main = styled.main`
+  position: relative;
+  margin-top: ${vw(-140)};
   margin-left: auto;
   margin-right: auto;
-  padding-top: 70px;
   ${contentsSizeSmall}
   ${media.greaterThan('medium')`
+    margin-top: -320px;
     ${contentsSizeMedium}
   `}
   ${media.greaterThan('large')`

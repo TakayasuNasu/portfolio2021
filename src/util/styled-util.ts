@@ -12,9 +12,7 @@ export const pseudo = (w: String, h: String) => `
 `
 
 export const contentsSizeSmall = () => `
-  padding-left: 10px;
-  padding-right: 10px;
-  width: 100% - 20px;
+  width: calc(100% - 20px);
 `
 
 export const contentsSizeMedium = () => `
@@ -27,4 +25,8 @@ export const contentsSizeLarge = () => `
   padding-left: 25px;
   padding-right: 25px;
   max-width: 930px;
+`
+
+export const shadow = () => `
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.03), 0 3px 1px -2px rgba(0, 0, 0, 0.03), 0 1px 5px 0 rgba(0, 0, 0, 0.03);
 `

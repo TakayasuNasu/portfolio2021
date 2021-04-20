@@ -4,11 +4,17 @@ import styled from 'styled-components'
 import media from 'styled-media-query'
 import { vw } from '../../util/styled-util'
 
-const Section = styled.section`
+const backgroundColors = [
+  'linear-gradient(135deg, #6b73ff 10%, #000dff 100%);',
+  'linear-gradient(to top, #f2fcfe, #1c92d2);',
+  'linear-gradient(to right, #6A82FB, #FC5C7D);',
+]
+
+const Section = styled.section<{ bgColorNum?: Number }>`
   position: relative;
   width: 100%;
   height: ${vw(220)};
-  background-image: linear-gradient(135deg, #6b73ff 10%, #000dff 100%);
+  background-image: ${(props: any) => backgroundColors[props.bgColorNum]};
   ${media.greaterThan('medium')`
   height: 480px;
   `}
@@ -29,5 +35,11 @@ const Section = styled.section`
   }
 `
 
-const MV: FC = () => <Section></Section>
+type ComponentProps = {
+  backgroundColorNumber?: Number
+}
+
+const MV: FC<ComponentProps> = ({ backgroundColorNumber = 0 }) => (
+  <Section bgColorNum={backgroundColorNumber} />
+)
 export default MV
