@@ -1,0 +1,307 @@
+js:
+  title: Javascript - Angular/React/jquery
+  max: 5
+  defaultValue: 5
+  trackStyle:
+    backgroundColor: '#4CAF50'
+    height: 2
+  handleStyle:
+    backgroundColor: '#4CAF50'
+    borderColor: '#4CAF50'
+  railStyle:
+    backgroundColor: '#bababa'
+    height: 2
+
+php:
+  title: php - zend/cake/larabel/slim/palcon
+  max: 5
+  defaultValue: 5
+  trackStyle:
+    backgroundColor: '#2196F3'
+    height: 2
+  handleStyle:
+    backgroundColor: '#2196F3'
+    borderColor: '#2196F3'
+  railStyle:
+    backgroundColor: '#bababa'
+    height: 2
+
+ruby:
+  title: Ruby - ruby on rails/Sinatra
+  max: 5
+  defaultValue: 4
+  trackStyle:
+    backgroundColor: '#FFEB3B'
+    height: 2
+  handleStyle:
+    backgroundColor: '#FFEB3B'
+    borderColor: '#FFEB3B'
+  railStyle:
+    backgroundColor: '#bababa'
+    height: 2
+
+go:
+  title: Go - echo
+  max: 5
+  defaultValue: 4
+  trackStyle:
+    backgroundColor: '#7C4DFF'
+    height: 2
+  handleStyle:
+    backgroundColor: '#7C4DFF'
+    borderColor: '#7C4DFF'
+  railStyle:
+    backgroundColor: '#bababa'
+    height: 2
+
+java:
+  title: Java - struts/spring
+  max: 5
+  defaultValue: 3
+  trackStyle:
+    backgroundColor: '#7C4DFF'
+    height: 2
+  handleStyle:
+    backgroundColor: '#7C4DFF'
+    borderColor: '#7C4DFF'
+  railStyle:
+    backgroundColor: '#bababa'
+    height: 2
+
+node:
+  title: Node.js - express
+  max: 5
+  defaultValue: 2
+  trackStyle:
+    backgroundColor: '#FFEB3B'
+    height: 2
+  handleStyle:
+    backgroundColor: '#FFEB3B'
+    borderColor: '#FFEB3B'
+  railStyle:
+    backgroundColor: '#bababa'
+    height: 2
+
+python:
+  title: Python
+  max: 5
+  defaultValue: 3
+  trackStyle:
+    backgroundColor: '#2196F3'
+    height: 2
+  handleStyle:
+    backgroundColor: '#2196F3'
+    borderColor: '#2196F3'
+  railStyle:
+    backgroundColor: '#bababa'
+    height: 2
+
+swift:
+  title: Swift - SwiftUI/Realm/SnapKit/Mapkit
+  max: 5
+  defaultValue: 5
+  trackStyle:
+    backgroundColor: '#4CAF50'
+    height: 2
+  handleStyle:
+    backgroundColor: '#4CAF50'
+    borderColor: '#4CAF50'
+  railStyle:
+    backgroundColor: '#bababa'
+    height: 2
+
+mysql:
+  title: MySql
+  max: 5
+  defaultValue: 4
+  trackStyle:
+    backgroundColor: '#4CAF50'
+    height: 2
+  handleStyle:
+    backgroundColor: '#4CAF50'
+    borderColor: '#4CAF50'
+  railStyle:
+    backgroundColor: '#bababa'
+    height: 2
+
+postgresql:
+  title: PostgreSQL
+  max: 5
+  defaultValue: 3
+  trackStyle:
+    backgroundColor: '#2196F3'
+    height: 2
+  handleStyle:
+    backgroundColor: '#2196F3'
+    borderColor: '#2196F3'
+  railStyle:
+    backgroundColor: '#bababa'
+    height: 2
+
+sqlite:
+  title: SQLite
+  max: 5
+  defaultValue: 3
+  trackStyle:
+    backgroundColor: '#FFEB3B'
+    height: 2
+  handleStyle:
+    backgroundColor: '#FFEB3B'
+    borderColor: '#FFEB3B'
+  railStyle:
+    backgroundColor: '#bababa'
+    height: 2
+
+docker:
+  title: Docker
+  max: 5
+  defaultValue: 5
+  trackStyle:
+    backgroundColor: '#4CAF50'
+    height: 2
+  handleStyle:
+    backgroundColor: '#4CAF50'
+    borderColor: '#4CAF50'
+  railStyle:
+    backgroundColor: '#bababa'
+    height: 2
+
+vagrant:
+  title: Vagrant
+  max: 5
+  defaultValue: 3
+  trackStyle:
+    backgroundColor: '#2196F3'
+    height: 2
+  handleStyle:
+    backgroundColor: '#2196F3'
+    borderColor: '#2196F3'
+  railStyle:
+    backgroundColor: '#bababa'
+    height: 2
+
+aws:
+  title: AWS
+  max: 5
+  defaultValue: 4
+  trackStyle:
+    backgroundColor: '#FFEB3B'
+    height: 2
+  handleStyle:
+    backgroundColor: '#FFEB3B'
+    borderColor: '#FFEB3B'
+  railStyle:
+    backgroundColor: '#bababa'
+    height: 2
+
+kubernetes:
+  title: kubernetes
+  max: 5
+  defaultValue: 2
+  trackStyle:
+    backgroundColor: '#2196F3'
+    height: 2
+  handleStyle:
+    backgroundColor: '#2196F3'
+    borderColor: '#2196F3'
+  railStyle:
+    backgroundColor: '#bababa'
+    height: 2
+
+html5:
+  title: HTML5/CSS3
+  max: 5
+  defaultValue: 5
+  trackStyle:
+    backgroundColor: '#4CAF50'
+    height: 2
+  handleStyle:
+    backgroundColor: '#4CAF50'
+    borderColor: '#4CAF50'
+  railStyle:
+    backgroundColor: '#bababa'
+    height: 2
+
+wordpress:
+  title: Wordpress
+  max: 5
+  defaultValue: 4
+  trackStyle:
+    backgroundColor: '#2196F3'
+    height: 2
+  handleStyle:
+    backgroundColor: '#2196F3'
+    borderColor: '#2196F3'
+  railStyle:
+    backgroundColor: '#bababa'
+    height: 2
+
+android:
+  title: Android
+  max: 5
+  defaultValue: 3
+  trackStyle:
+    backgroundColor: '#FFEB3B'
+    height: 2
+  handleStyle:
+    backgroundColor: '#FFEB3B'
+    borderColor: '#FFEB3B'
+  railStyle:
+    backgroundColor: '#bababa'
+    height: 2
+
+git:
+  title: Git/Github
+  max: 5
+  defaultValue: 5
+  trackStyle:
+    backgroundColor: '#4CAF50'
+    height: 2
+  handleStyle:
+    backgroundColor: '#4CAF50'
+    borderColor: '#4CAF50'
+  railStyle:
+    backgroundColor: '#bababa'
+    height: 2
+
+junit:
+  title: JUnit/PHPUnit/RSpec/Jest
+  max: 5
+  defaultValue: 3
+  trackStyle:
+    backgroundColor: '#2196F3'
+    height: 2
+  handleStyle:
+    backgroundColor: '#2196F3'
+    borderColor: '#2196F3'
+  railStyle:
+    backgroundColor: '#bababa'
+    height: 2
+
+wercker:
+  title: Wercker
+  max: 5
+  defaultValue: 3
+  trackStyle:
+    backgroundColor: '#2196F3'
+    height: 2
+  handleStyle:
+    backgroundColor: '#2196F3'
+    borderColor: '#2196F3'
+  railStyle:
+    backgroundColor: '#bababa'
+    height: 2
+
+circleci:
+  title: CircleCI
+  max: 5
+  defaultValue: 4
+  trackStyle:
+    backgroundColor: '#FFEB3B'
+    height: 2
+  handleStyle:
+    backgroundColor: '#FFEB3B'
+    borderColor: '#FFEB3B'
+  railStyle:
+    backgroundColor: '#bababa'
+    height: 2

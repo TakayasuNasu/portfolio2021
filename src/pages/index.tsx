@@ -5,6 +5,7 @@ import media from 'styled-media-query'
 import Layout from '../components/layout'
 import MV from '../components/atoms/mv'
 import About from '../components/organisms/blocks/about'
+import Skills from '../components/organisms/blocks/skills'
 import Portfolio from '../components/organisms/blocks/portfolio'
 
 const Container = styled.div`
@@ -16,6 +17,7 @@ const Page: FC = () => (
   <Layout mv={<MV backgroundColorNumber={1} />}>
     <Container>
       <About />
+      <Skills />
       <Portfolio />
     </Container>
   </Layout>

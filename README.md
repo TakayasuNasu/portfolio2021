@@ -29,6 +29,8 @@ apk add make nasm autoconf automake libtool dpkg pkgconfig libpng libpng-dev g++
 ## Reference
 
 - [React Icons](https://react-icons.github.io/react-icons/search)
+- [React Slider](https://github.com/react-component/slider/)
+- [react\-intersection\-observer](https://github.com/thebuilder/react-intersection-observer#readme)
 
 ```jsx
 //<Layout left={<Sidebar />} top={<NavBar />} center={<Content />} />
