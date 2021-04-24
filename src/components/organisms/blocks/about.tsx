@@ -31,6 +31,11 @@ const Section = styled.section`
   ul.sns {
     margin-top: 20px;
   }
+  p.about {
+    margin-top: 20px;
+    font-size: 16px;
+    line-height: 1.6;
+  }
   div.profile {
     margin-top: 30px;
     ${media.greaterThan('medium')`
@@ -73,6 +78,10 @@ const About = () => (
           <Image filename="face.jpg" style={{ borderRadius: '50%' }} />
         </figure>
         <SNS />
+        <p className="about">
+          Senior Full-Stack Web Developer with more than 9 years of experience
+          in Information Technology Industry.
+        </p>
       </div>
       <div className="profile">
         <ul className="profile-list">

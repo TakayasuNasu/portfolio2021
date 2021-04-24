@@ -7,6 +7,7 @@ import MV from '../components/atoms/mv'
 import About from '../components/organisms/blocks/about'
 import Skills from '../components/organisms/blocks/skills'
 import Portfolio from '../components/organisms/blocks/portfolio'
+import Profile from '../components/organisms/blocks/profile'
 
 const Container = styled.div`
   display: grid;
@@ -19,6 +20,7 @@ const Page: FC = () => (
       <About />
       <Skills />
       <Portfolio />
+      <Profile />
     </Container>
   </Layout>
 )
