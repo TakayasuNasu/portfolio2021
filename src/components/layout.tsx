@@ -5,6 +5,7 @@ import styled from 'styled-components'
 import media from 'styled-media-query'
 
 import Header from './header'
+import Footer from './footer'
 import '../styles/common.scss'
 import {
   contentsSizeSmall,
@@ -35,6 +36,7 @@ const Layout: FC<ComponentProps> = ({ mv, children }) => (
     <Header />
     <section className="mv">{mv}</section>
     <Main className="container">{children}</Main>
+    <Footer />
   </React.Fragment>
 )
 

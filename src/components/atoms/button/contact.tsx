@@ -27,8 +27,11 @@ const Anchor = styled.a<{ bg?: String }>`
     ${pseudo('10px', '10px')}
   }
   p.button-text {
-    font-size: 20px;
+    font-size: ${vw(18)};
     color: #ecf0f1;
+    ${media.greaterThan('medium')`
+      font-size: 20px;
+    `}
   }
 `
 

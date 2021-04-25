@@ -2,7 +2,7 @@ import React from 'react'
 import type { FC } from 'react'
 import styled from 'styled-components'
 import media from 'styled-media-query'
-import { pseudo } from '../../../util/styled-util'
+import { vw, pseudo } from '../../../util/styled-util'
 
 const share = `
   border-radius: 5px;
@@ -19,8 +19,8 @@ type StyledProps = { active: Boolean }
 const Div = styled.div<StyledProps>`
   display: flex;
   align-items: center;
-  width: 50px;
-  height: 50px;
+  width: ${vw(45)};
+  height: ${vw(45)};
   ${media.greaterThan('medium')`
   width: 45px;
   height: 45px;
@@ -29,7 +29,7 @@ const Div = styled.div<StyledProps>`
   span.span {
     display: block;
     position: relative;
-    width: 50px;
+    width: ${vw(45)};
     height: 6px;
     ${media.greaterThan('medium')`
     ${pcSize}
@@ -38,7 +38,7 @@ const Div = styled.div<StyledProps>`
     ${share}
     &::before,
     &::after {
-      ${pseudo('50px', '6px')}
+      ${pseudo(vw(45), '6px')}
       ${share}
       ${media.greaterThan('medium')`
         ${pcSize}
