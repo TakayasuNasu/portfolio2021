@@ -7,6 +7,7 @@ import { TiDeviceLaptop, TiEdit, TiHtml5 } from 'react-icons/ti'
 
 import H3 from '../../atoms/headline/h3'
 import H4 from '../../atoms/headline/h4'
+import { shadow } from '../../../util/styled-util'
 
 const Section = styled.section`
   ul.grid {
@@ -19,8 +20,7 @@ const Section = styled.section`
     `}
     li {
       background-color: #ffffff;
-      box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.03),
-        0 3px 1px -2px rgba(0, 0, 0, 0.03), 0 1px 5px 0 rgba(0, 0, 0, 0.03);
+      ${shadow}
     }
     article {
       display: grid;

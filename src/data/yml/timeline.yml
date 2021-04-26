@@ -1,0 +1,35 @@
+- id: 1
+  title: Full Stuck Developer / Technical Director
+  date: Jun 2017 - August 2020
+  company: Medix inc.
+  text: |-
+    As project leader, I selected technologies and supported members of the project team.
+    Created SPA for centralized management which useful knowledge within the company that was stored in various locations.
+    That SPA is made with Docker, Laravel, Graphql and Vue.js.
+  color: '#2879ff'
+
+- id: 2
+  title: Senior Web Developer
+  date: November 2014 - October 2016
+  company: Strawbag inc
+  text: |-
+    Took on a wide range of tasks like Requirement Definition, Research, System Design, Implementation, Testing, Deployment, Task Management almost every project because that's company had only a few programmer.
+  color: '#01c853'
+
+- id: 3
+  title: Junior Web Developer
+  date: April 2013 - October 2014
+  company: BTM inc
+  text: |-
+    Runs a Linux workshop in the company, lecturing on the basics of Linux and how to build an environment using Vagrant and Chef.
+    Continued to release Smartphone game which over 100 php files, built with over 100 tables, used by over 10,000 people daily consistently.
+  color: '#fec107'
+
+- id: 4
+  title: FJunior Web Developer
+  date: Jun 2012 - March 2013
+  company: I-Freek
+  text: |-
+    Created a script in php to migrate DB data and migrated over 10,000 records to another DB without any problems.
+    Modified an existing program made with Perl and deploy it on Linux while checking the Apache conf file with Vim.
+  color: '#FF4081'

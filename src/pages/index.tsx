@@ -8,6 +8,7 @@ import About from '../components/organisms/blocks/about'
 import Skills from '../components/organisms/blocks/skills'
 import Portfolio from '../components/organisms/blocks/portfolio'
 import Profile from '../components/organisms/blocks/profile'
+import Timeline from '../components/organisms/blocks/timeline'
 
 const Container = styled.div`
   display: grid;
@@ -21,6 +22,7 @@ const Page: FC = () => (
       <Skills />
       <Portfolio />
       <Profile />
+      <Timeline />
     </Container>
   </Layout>
 )
