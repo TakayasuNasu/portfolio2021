@@ -78,7 +78,10 @@ const Contact: FC = () => {
       "text": "${text}"
     }`
     await axios
-      .post(`https://hooks.slack.com/services/${process.env.SLACK_TOKEN}`, data)
+      .post(
+        `https://hooks.slack.com/services/${process.env.GATSBY_SLACK_TOKEN}`,
+        data
+      )
       .catch((error) => console.error(error))
   }
 
