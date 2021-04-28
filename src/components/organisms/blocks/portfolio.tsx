@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react'
+import React, { useState } from 'react'
 import type { FC } from 'react'
 import styled from 'styled-components'
 import media from 'styled-media-query'
@@ -76,7 +76,7 @@ const UL = styled.ul`
   }
 `
 
-const Portfolio = () => {
+const Portfolio: FC = () => {
   const [type, setType] = useState('ALL')
   const handleClick = (e: any) => {
     setType(e.target.innerHTML)

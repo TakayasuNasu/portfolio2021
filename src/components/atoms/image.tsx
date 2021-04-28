@@ -1,9 +1,8 @@
 import React from 'react'
-import type { FC } from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
 import Img from 'gatsby-image'
 
-export default (props) => {
+export default (props: any) => {
   const { allImageSharp } = useStaticQuery(graphql`
     query {
       allImageSharp {
@@ -26,8 +25,9 @@ export default (props) => {
   return (
     <Img
       fluid={
-        allImageSharp.nodes.find((n) => n.fluid.originalName == props.filename)
-          .fluid
+        allImageSharp.nodes.find(
+          (n: any) => n.fluid.originalName == props.filename
+        ).fluid
       }
       alt={props.alt}
       style={props.style}

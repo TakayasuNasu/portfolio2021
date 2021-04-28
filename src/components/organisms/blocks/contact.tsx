@@ -18,6 +18,7 @@ const Section = styled.section`
     row-gap: 50px;
     padding: 30px 20px;
     opacity: 1;
+    visibility: visible;
     transition: 1s;
     background-color: #ffffff;
     ${shadow}

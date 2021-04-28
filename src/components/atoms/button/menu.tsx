@@ -62,11 +62,14 @@ const Div = styled.div<StyledProps>`
   }
 `
 
-type ComponentProps = { isExpanded?: Boolean }
+type ComponentProps = {
+  isExpanded?: Boolean
+  setExpanded: (value: boolean) => void
+}
 
-const MenuButon: FC<ComponentProps> = ({ isExpanded = false }) => {
+const MenuButon: FC<ComponentProps> = ({ isExpanded = false, setExpanded }) => {
   return (
-    <Div active={isExpanded}>
+    <Div active={isExpanded} onClick={() => setExpanded(!isExpanded)}>
       <span className="span"></span>
     </Div>
   )

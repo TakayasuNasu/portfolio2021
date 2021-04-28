@@ -1,7 +1,6 @@
 import React from 'react'
 import type { FC } from 'react'
 import styled from 'styled-components'
-import media from 'styled-media-query'
 import Slider from 'rc-slider'
 import 'rc-slider/assets/index.css'
 import { useInView } from 'react-intersection-observer'
@@ -22,9 +21,9 @@ const DD = styled.dd`
 `
 
 type ComponentProps = {
-  title: String
-  max: Number
-  defaultValue: Number
+  title: string
+  max: number
+  defaultValue: number
   trackStyle: Object
   handleStyle: Object
   railStyle: Object

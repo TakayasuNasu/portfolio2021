@@ -1,11 +1,10 @@
 import React from 'react'
 import type { FC } from 'react'
 import styled from 'styled-components'
-import media from 'styled-media-query'
 
 import { shadow } from '../../../util/styled-util'
 
-type ComponentProps = { color?: String }
+type ComponentProps = { color?: string }
 
 const Div = styled.div<ComponentProps>`
   display: flex;

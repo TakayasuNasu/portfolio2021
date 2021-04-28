@@ -5,7 +5,6 @@ import styled from 'styled-components'
 import media from 'styled-media-query'
 import H1 from './atoms/headline/h1'
 import ContactButton from './atoms/button/contact'
-import MenuButton from './atoms/button/menu'
 import {
   contentsSizeSmall,
   contentsSizeMedium,
@@ -48,7 +47,11 @@ const HeaderStyle = styled.header`
   }
 `
 
-const Header: FC = () => (
+type ComponentProps = {
+  menu: JSX.IntrinsicAttributes
+}
+
+const Header: FC<ComponentProps> = ({ menu }) => (
   <React.Fragment>
     <HeaderStyle>
       <nav className="inner">
@@ -56,7 +59,7 @@ const Header: FC = () => (
           <Link to="/">@TakayasuNasu</Link>
         </H1>
         <ContactButton>contact</ContactButton>
-        <MenuButton />
+        {menu}
       </nav>
     </HeaderStyle>
     <EmptyBleck />

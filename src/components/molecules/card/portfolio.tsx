@@ -74,10 +74,10 @@ const objectFit = {
 }
 
 type ComponentProps = {
-  img: String
-  title: String
-  siteUrl: String
-  pageUrl: String
+  img: string
+  title: string
+  siteUrl: string
+  pageUrl: string
 }
 
 const Card: FC<ComponentProps> = ({

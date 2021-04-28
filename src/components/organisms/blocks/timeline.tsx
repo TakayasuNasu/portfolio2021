@@ -29,11 +29,11 @@ const Section = styled.section`
   }
 `
 type StyledProps = {
-  borderColor: String
-  flexStyle: Object
-  iconStyle: Object
-  itemBefore: Object
-  itemAfter: Object
+  borderColor: any
+  flexStyle: any
+  iconStyle: any
+  itemBefore: any
+  itemAfter: any
 }
 
 const LI = styled.li<StyledProps>`
@@ -105,7 +105,7 @@ const LI = styled.li<StyledProps>`
   }
 `
 
-const listItem = data.map((data, i) => {
+const listItem = data.map((data: any, i: number) => {
   const [flexStyle, iconStyle, itemBefore, itemAfter] = (() => {
     if (i % 2 == 0) {
       return [

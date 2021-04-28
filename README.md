@@ -44,4 +44,8 @@ function Layout(props) {
     </div>
   )
 }
+
+console.log(
+  `${typeof setExpanded} ${Object.prototype.toString.call(setExpanded)}`
+)
 ```

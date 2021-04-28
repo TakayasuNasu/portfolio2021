@@ -10,7 +10,6 @@ link: ''
 files:
   - social-game01.png
   - social-game02.png
-  - social-game03.jpg
 ---
 
 import PrePostNav from '../../src/components/molecules/pre-post-nav.tsx'

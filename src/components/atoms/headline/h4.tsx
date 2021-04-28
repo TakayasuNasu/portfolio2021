@@ -12,7 +12,7 @@ const HeadLine = styled.h4`
   `}
 `
 
-type ComponentProps = { color?: String }
+type ComponentProps = { color?: string }
 
 const H4: FC<ComponentProps> = ({ color, children }) => (
   <HeadLine color={color}>{children}</HeadLine>

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import type { FC } from 'react'
 import 'typeface-open-sans'
 import styled from 'styled-components'
@@ -6,6 +6,8 @@ import media from 'styled-media-query'
 
 import Header from './header'
 import Footer from './footer'
+import MenuButton from './atoms/button/menu'
+import RightNav from './organisms/nav/right'
 import '../styles/common.scss'
 import {
   contentsSizeSmall,
@@ -31,13 +33,19 @@ const Main = styled.main`
 
 type ComponentProps = { mv?: any }
 
-const Layout: FC<ComponentProps> = ({ mv, children }) => (
-  <React.Fragment>
-    <Header />
-    <section className="mv">{mv}</section>
-    <Main className="container">{children}</Main>
-    <Footer />
-  </React.Fragment>
-)
+const Layout: FC<ComponentProps> = ({ mv, children }) => {
+  const [isExpanded, setExpanded] = useState(false)
+  return (
+    <React.Fragment>
+      <Header
+        menu={<MenuButton isExpanded={isExpanded} setExpanded={setExpanded} />}
+      />
+      <section className="mv">{mv}</section>
+      <Main className="container">{children}</Main>
+      <Footer />
+      <RightNav isExpanded={isExpanded} setExpanded={setExpanded} />
+    </React.Fragment>
+  )
+}
 
 export default Layout

@@ -35,10 +35,10 @@ const Div = styled.div`
 `
 
 type ComponentProps = {
-  preUrl?: string
-  postUrl?: string
-  preText?: String
-  postText?: String
+  preUrl: string
+  postUrl: string
+  preText: string
+  postText: string
 }
 
 const PrePostNav: FC<ComponentProps> = ({

@@ -70,7 +70,7 @@ const Section = styled.section`
   }
 `
 
-const About = () => (
+const About: FC = () => (
   <Section>
     <div className="inner">
       <div className="pic">
