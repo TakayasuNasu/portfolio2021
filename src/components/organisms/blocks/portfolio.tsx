@@ -4,7 +4,7 @@ import styled from 'styled-components'
 import media from 'styled-media-query'
 import H3 from '../../atoms/headline/h3'
 import Card from '../../molecules/card/portfolio'
-import { vw, pseudo } from '../../../util/styled-util'
+import { vw } from '../../../util/styled-util'
 import Data from '../../../data/yml/portfolio.yml'
 
 const Section = styled.section`
@@ -78,11 +78,11 @@ const UL = styled.ul`
 
 const Portfolio = () => {
   const [type, setType] = useState('ALL')
-  const handleClick = (e) => {
+  const handleClick = (e: any) => {
     setType(e.target.innerHTML)
   }
 
-  const Cards = Data.map((data, i) => {
+  const Cards = Data.map((data: any, i: Number) => {
     let className = type != 'ALL' ? (data.type != type ? 'hide' : '') : ''
     return (
       <li className={`card ${className}`} key={i + data.title}>

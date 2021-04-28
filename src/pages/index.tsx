@@ -9,10 +9,19 @@ import Skills from '../components/organisms/blocks/skills'
 import Portfolio from '../components/organisms/blocks/portfolio'
 import Profile from '../components/organisms/blocks/profile'
 import Timeline from '../components/organisms/blocks/timeline'
+import Contact from '../components/organisms/blocks/contact'
+import Map from '../components/organisms/blocks/map'
 
 const Container = styled.div`
   display: grid;
   row-gap: 120px;
+  div.contact-map {
+    display: grid;
+    row-gap: 50px;
+    ${media.greaterThan('medium')`
+      grid-template-columns: 1fr 0.7fr;
+    `}
+  }
 `
 
 const Page: FC = () => (
@@ -23,6 +32,10 @@ const Page: FC = () => (
       <Portfolio />
       <Profile />
       <Timeline />
+      <div className="contact-map">
+        <Contact />
+        <Map />
+      </div>
     </Container>
   </Layout>
 )
