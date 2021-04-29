@@ -8,6 +8,7 @@ const backgroundColors = [
   'linear-gradient(135deg, #6b73ff 10%, #000dff 100%);',
   'linear-gradient(to top, #f2fcfe, #1c92d2);',
   'linear-gradient(to right, #6A82FB, #FC5C7D);',
+  'background-image: linear-gradient(to top, #f43b47 0%, #453a94 100%);',
 ]
 
 const Section = styled.section<{ bgColorNum?: Number }>`
