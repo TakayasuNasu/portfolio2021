@@ -1,6 +1,9 @@
 import React from 'react'
 import type { FC } from 'react'
 import styled from 'styled-components'
+import media from 'styled-media-query'
+import { AnchorLink } from 'gatsby-plugin-anchor-links'
+
 import {
   FaEnvelope,
   FaRegFolder,
@@ -9,27 +12,31 @@ import {
   FaBookOpen,
 } from 'react-icons/fa'
 import { BiFootball } from 'react-icons/bi'
+import { MdWeb } from 'react-icons/md'
 
 import Image from '../../atoms/image'
 import H2 from '../../atoms/headline/h2'
 import SNS from '../../molecules/list/sns-list'
+import { vw } from '../../../util/styled-util'
 
-const Layer = styled.div`
-  position: fixed;
-  top: 70px;
-  left: 0;
-  width: calc(100% - 310px);
-  height: 100%;
-  min-height: 100vh;
-  opacity: 1;
-  visibility: visible;
-  background-color: rgba(0, 0, 0, 0.2);
-  transition: 0.1s;
-  &.hide {
-    max-height: 0;
-    min-height: 0;
-    opacity: 0;
-    visibility: hidden;
+const Wrapper = styled.div`
+  div.layer {
+    position: fixed;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    min-height: 100vh;
+    opacity: 1;
+    visibility: visible;
+    background-color: rgba(0, 0, 0, 0.2);
+    transition: 0.1s;
+    &.hide {
+      max-height: 0;
+      min-height: 0;
+      opacity: 0;
+      visibility: hidden;
+    }
   }
   nav.right-nav {
     display: grid;
@@ -44,23 +51,31 @@ const Layer = styled.div`
     margin-left: auto;
     margin-right: 0;
     padding: 30px 14px;
-    width: 310px;
+    width: ${vw(280)};
+    ${media.greaterThan('medium')`
+      width: 310px;
+    `}
     background-color: rgb(43, 43, 43);
     transition: 0.3s;
-    pointer-events: none;
     &.hide {
+      padding: 0;
       width: 0;
+      transition: 0.3s;
     }
   }
   figure.img {
     margin: 0 auto;
-    width: 230px;
+    width: ${vw(160)};
+    ${media.greaterThan('medium')`
+      width: 230px;
+    `}
   }
   ul.link-list {
     display: grid;
     row-gap: 24px;
+    justify-content: center;
     a {
-      font-size: 24px;
+      font-size: 18px;
       color: #969696;
       &.active {
         color: #ffffff;
@@ -69,11 +84,6 @@ const Layer = styled.div`
     svg {
       vertical-align: middle;
       margin-right: 16px;
-    }
-  }
-  li {
-    a {
-      pointer-events: auto;
     }
   }
   footer {
@@ -96,7 +106,8 @@ const RightNav: FC<ComponentProps> = ({ isExpanded, setExpanded }) => {
     }
   }
   return (
-    <Layer className={classHide} onClick={close}>
+    <Wrapper>
+      <div className={`layer ${classHide}`} onClick={close}></div>
       <nav className={`right-nav ${classHide}`}>
         <figure className="img">
           <Image filename="face.jpg" style={{ borderRadius: '50%' }} />
@@ -104,6 +115,36 @@ const RightNav: FC<ComponentProps> = ({ isExpanded, setExpanded }) => {
         <H2 color="#ffffff">Takayasu Nasu</H2>
         <SNS />
         <ul className="link-list">
+          <li>
+            <AnchorLink to="/#skills">
+              <FaFileAlt />
+              Skills
+            </AnchorLink>
+          </li>
+          <li>
+            <AnchorLink to="/#portfolio">
+              <MdWeb />
+              Portfolio
+            </AnchorLink>
+          </li>
+          <li>
+            <AnchorLink to="/#profile">
+              <FaRegFolder />
+              Profile
+            </AnchorLink>
+          </li>
+          <li>
+            <AnchorLink to="/#timeline">
+              <FaRegFile />
+              Timeline
+            </AnchorLink>
+          </li>
+          <li>
+            <AnchorLink to="/#contact">
+              <FaEnvelope />
+              Contact
+            </AnchorLink>
+          </li>
           <li>
             <a href="https://blog.i-nasu.com" target="_blank">
               <FaBookOpen />
@@ -121,7 +162,7 @@ const RightNav: FC<ComponentProps> = ({ isExpanded, setExpanded }) => {
           <p>TKY {new Date().getFullYear()}. All rights reserved.</p>
         </footer>
       </nav>
-    </Layer>
+    </Wrapper>
   )
 }
 

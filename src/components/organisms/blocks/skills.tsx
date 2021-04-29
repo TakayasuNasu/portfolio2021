@@ -30,7 +30,7 @@ const skillProps = { ...data }
 
 const Skills: FC = () => {
   return (
-    <Section>
+    <Section id="skills">
       <article>
         <H3>Programing/Framework 01</H3>
         <dl className="d-list">

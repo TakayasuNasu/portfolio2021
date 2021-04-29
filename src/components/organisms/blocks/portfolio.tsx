@@ -106,7 +106,7 @@ const Portfolio: FC = () => {
   })
 
   return (
-    <Section>
+    <Section id="portfolio">
       <div className="header">
         <H3>Portfolio</H3>
         <ul className="list">{menu}</ul>

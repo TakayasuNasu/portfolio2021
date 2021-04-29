@@ -43,7 +43,7 @@ const Section = styled.section`
 
 const Profile = () => {
   return (
-    <Section>
+    <Section id="profile">
       <H3>What I do</H3>
       <ul className="grid">
         <li>

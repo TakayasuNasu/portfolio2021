@@ -156,7 +156,7 @@ const listItem = data.map((data: any, i: number) => {
 })
 
 const Timeline: FC = () => (
-  <Section>
+  <Section id="timeline">
     <H3>Experience</H3>
     <ul className="timeline-list">{listItem}</ul>
   </Section>

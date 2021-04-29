@@ -16,7 +16,7 @@ import MV from '../components/atoms/mv'
 import H3 from '../components/atoms/headline/h3'
 import Button from '../components/atoms/button/base'
 import Image from '../components/atoms/image'
-import { vw } from '../util/styled-util'
+import SEO from '../components/seo'
 import type { PortfolioPageContext } from '../../gatsby-node'
 import type { PortfolioTemplateQuery } from '../../types/graphql-types'
 
@@ -74,9 +74,10 @@ const Section = styled.section`
 interface PageProps {
   data: PortfolioTemplateQuery
   pageContext: PortfolioPageContext
+  location: Location
 }
 
-const Page: FC<PageProps> = ({ data }) => {
+const Page: FC<PageProps> = ({ data, location }) => {
   const SwiperItems = data.mdx?.frontmatter?.files?.map((filename) => (
     <SwiperSlide key={filename}>
       <Image filename={filename} />
@@ -93,6 +94,10 @@ const Page: FC<PageProps> = ({ data }) => {
   return (
     <Layout mv={<MV />}>
       <Section>
+        <SEO
+          pagetitle={data.mdx?.frontmatter?.title}
+          pagepath={location.pathname}
+        />
         <Swiper pagination={{ clickable: true }}>{SwiperItems}</Swiper>
         <ul className="list">
           <li>

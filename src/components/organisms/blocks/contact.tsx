@@ -87,7 +87,7 @@ const Contact: FC = () => {
   }
 
   return (
-    <Section>
+    <Section id="contact">
       <div className={`form ${hide}`}>
         <H4>Please feel free to send message to me if you have a question.</H4>
         <TextField inputRef={inputName} ripple label="Name" />
