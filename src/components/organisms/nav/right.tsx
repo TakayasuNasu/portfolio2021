@@ -71,6 +71,11 @@ const Layer = styled.div`
       margin-right: 16px;
     }
   }
+  li {
+    a {
+      pointer-events: auto;
+    }
+  }
   footer {
     font-size: 16px;
     color: #969696;
