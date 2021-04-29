@@ -13,6 +13,7 @@ import {
 } from 'react-icons/fa'
 import { BiFootball } from 'react-icons/bi'
 import { MdWeb } from 'react-icons/md'
+import { RiPagesLine } from 'react-icons/ri'
 
 import Image from '../../atoms/image'
 import H2 from '../../atoms/headline/h2'
@@ -156,9 +157,15 @@ const RightNav: FC<ComponentProps> = ({ isExpanded, setExpanded }) => {
             </a>
           </li>
           <li>
-            <a href="https://www.i-nasu.com/standings/" target="_blank">
+            <a href="https://www.i-nasu.com/standings" target="_blank">
               <BiFootball />
               Fanatic Football Fan?
+            </a>
+          </li>
+          <li>
+            <a href="https://www.i-nasu.com/portfolio" target="_blank">
+              <RiPagesLine />
+              Old Page
             </a>
           </li>
         </ul>
