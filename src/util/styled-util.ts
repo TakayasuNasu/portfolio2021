@@ -18,7 +18,7 @@ export const contentsSizeSmall = () => `
 export const contentsSizeMedium = () => `
   padding-left: 25px;
   padding-right: 25px;
-  width: 100% - 50px;
+  width: calc(100% - 50px);
 `
 
 export const contentsSizeLarge = () => `
