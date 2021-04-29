@@ -110,7 +110,11 @@ const RightNav: FC<ComponentProps> = ({ isExpanded, setExpanded }) => {
       <div className={`layer ${classHide}`} onClick={close}></div>
       <nav className={`right-nav ${classHide}`}>
         <figure className="img">
-          <Image filename="face.jpg" style={{ borderRadius: '50%' }} />
+          <Image
+            filename="face.jpg"
+            style={{ borderRadius: '50%' }}
+            alt="face"
+          />
         </figure>
         <H2 color="#ffffff">Takayasu Nasu</H2>
         <SNS />

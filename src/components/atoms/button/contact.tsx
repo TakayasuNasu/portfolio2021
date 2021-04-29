@@ -4,7 +4,7 @@ import styled from 'styled-components'
 import media from 'styled-media-query'
 import { vw, pseudo } from '../../../util/styled-util'
 
-const Anchor = styled.a<{ bg?: String }>`
+const Anchor = styled.div<{ bg?: String }>`
   position: relative;
   display: flex;
   align-items: center;

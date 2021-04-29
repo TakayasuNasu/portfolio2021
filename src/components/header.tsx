@@ -5,6 +5,7 @@ import styled from 'styled-components'
 import media from 'styled-media-query'
 import H1 from './atoms/headline/h1'
 import ContactButton from './atoms/button/contact'
+import { AnchorLink } from 'gatsby-plugin-anchor-links'
 import {
   contentsSizeSmall,
   contentsSizeMedium,
@@ -45,6 +46,15 @@ const HeaderStyle = styled.header`
       text-decoration: none;
     }
   }
+  ul.anchor-list {
+    display: none;
+    ${media.greaterThan('medium')`
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      column-gap: 16px;
+      font-size: 20px;
+    `}
+  }
 `
 
 type ComponentProps = {
@@ -58,7 +68,23 @@ const Header: FC<ComponentProps> = ({ menu }) => (
         <H1>
           <Link to="/">@TakayasuNasu</Link>
         </H1>
-        <ContactButton>contact</ContactButton>
+        <ul className="anchor-list">
+          <li>
+            <AnchorLink to="/#skills">Skills</AnchorLink>
+          </li>
+          <li>
+            <AnchorLink to="/#portfolio">Portfolio</AnchorLink>
+          </li>
+          <li>
+            <AnchorLink to="/#profile">Profile</AnchorLink>
+          </li>
+          <li>
+            <AnchorLink to="/#timeline">Timeline</AnchorLink>
+          </li>
+        </ul>
+        <AnchorLink to="/#contact">
+          <ContactButton>contact</ContactButton>
+        </AnchorLink>
         {menu}
       </nav>
     </HeaderStyle>

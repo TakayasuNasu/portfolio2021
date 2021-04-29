@@ -2,6 +2,7 @@ import React from 'react'
 import type { FC } from 'react'
 import styled from 'styled-components'
 import media from 'styled-media-query'
+import { AnchorLink } from 'gatsby-plugin-anchor-links'
 
 import H2 from '../../atoms/headline/h2'
 import H3 from '../../atoms/headline/h3'
@@ -75,7 +76,11 @@ const About: FC = () => (
     <div className="inner">
       <div className="pic">
         <figure className="img">
-          <Image filename="face.jpg" style={{ borderRadius: '50%' }} />
+          <Image
+            filename="face.jpg"
+            style={{ borderRadius: '50%' }}
+            alt="face"
+          />
         </figure>
         <SNS />
         <p className="about">
@@ -92,7 +97,9 @@ const About: FC = () => (
             <H3>Programmer / Full stack Engineer</H3>
           </li>
           <li>
-            <Contact>contact</Contact>
+            <AnchorLink to="/#contact">
+              <Contact>contact</Contact>
+            </AnchorLink>
           </li>
         </ul>
         <div className="detail">
