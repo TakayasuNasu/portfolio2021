@@ -1,6 +1,8 @@
 It is built with Typescript and Gatsby.
 
-## Site: [https://www-i-nasu-com.netlify.app/](https://www-i-nasu-com.netlify.app/)
+## Production: [https://www.i-nasu.com/](https://www.i-nasu.com/)
+
+## Staging: [https://www-i-nasu-com.netlify.app/](https://www-i-nasu-com.netlify.app/)
 
 ### Contents area size
 
@@ -32,8 +34,9 @@ apk add make nasm autoconf automake libtool dpkg pkgconfig libpng libpng-dev g++
 - [React Slider](https://github.com/react-component/slider/)
 - [react\-intersection\-observer](https://github.com/thebuilder/react-intersection-observer#readme)
 
+<!-- prettier-ignore -->
 ```jsx
-//<Layout left={<Sidebar />} top={<NavBar />} center={<Content />} />
+<Layout left={<Sidebar />} top={<NavBar />} center={<Content />} />
 
 function Layout(props) {
   return (

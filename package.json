@@ -45,7 +45,7 @@
     "react-scroll": "^1.8.2",
     "styled-components": "^5.2.3",
     "styled-media-query": "^2.1.2",
-    "swiper": "^6.5.8",
+    "swiper": "^6.5.9",
     "typeface-open-sans": "^1.1.13"
   }
 }
