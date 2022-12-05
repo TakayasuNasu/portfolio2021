@@ -1,45 +1,25 @@
 import React from 'react'
 import type { FC } from 'react'
-import Helmet from 'react-helmet'
-import { useStaticQuery, graphql } from 'gatsby'
+import useSiteMetadata from '@/hooks/useSiteMetadata'
 
-type ComponentProps = {
+type SeoProps = {
   pagetitle?: string
-  pagedesc?: string
-  pagepath?: string
+  description?: string
 }
 
-const SEO: FC<ComponentProps> = ({ pagetitle, pagedesc, pagepath }) => {
-  const data = useStaticQuery(graphql`
-    query {
-      site {
-        siteMetadata {
-          title
-          description
-          siteUrl
-        }
-      }
-    }
-  `)
+const SEO: FC<SeoProps> = ({ pagetitle, description }) => {
+  const meta = useSiteMetadata()
 
-  const title = pagetitle
-    ? `${pagetitle} - ${data.site.siteMetadata.title}`
-    : data.site.siteMetadata.title
-  const description = pagedesc || data.site.siteMetadata.description
-  const url = pagepath
-    ? `${data.site.siteMetadata.siteUrl}/${pagepath}`
-    : data.site.siteMetadata.siteUrl
+  const seo = {
+    title: pagetitle || meta?.title,
+    description: description || meta?.description,
+  }
 
   return (
-    <Helmet>
-      <title>{title}</title>
-      <meta
-        data-react-helmet="true"
-        name="description"
-        content={description}
-      ></meta>
-      <link rel="canonical" href={url}></link>
-    </Helmet>
+    <>
+      <title>{seo.title}</title>
+      <meta name="description" content={seo.description || ''} />
+    </>
   )
 }
 

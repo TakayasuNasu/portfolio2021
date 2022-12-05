@@ -1,95 +1,52 @@
-html,
-body,
-div,
-span,
-iframe,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p,
-blockquote,
-pre,
-a,
-address,
-em,
-img,
-small,
-strong,
-sub,
-sup,
-b,
-u,
-i,
-dl,
-dt,
-dd,
-ol,
-ul,
-li,
-fieldset,
-form,
-label,
-table,
-caption,
-tbody,
-tfoot,
-thead,
-tr,
-th,
-td,
-article,
-aside,
-figure,
-figcaption,
-footer,
-header,
-menu,
-nav,
-ruby,
-section,
-mark,
-audio,
-video {
+/* http://meyerweb.com/eric/tools/css/reset/
+  v2.0 | 20110126
+  License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
   margin: 0;
   padding: 0;
   border: 0;
   font-size: 100%;
   font: inherit;
+  font-weight: 500;
+  font-family: "Helvetica Neue",
+    Arial,
+    "Hiragino Kaku Gothic ProN",
+    "Hiragino Sans",
+    Meiryo,
+    sans-serif;
   vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
-article,
-aside,
-details,
-figcaption,
-figure,
-footer,
-header,
-hgroup,
-menu,
-main,
-nav,
-section {
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
   display: block;
+  isolation: isolate;
 }
 body {
   line-height: 1;
 }
-ol,
-ul {
+ol, ul {
   list-style: none;
 }
-blockquote,
-q {
+blockquote, q {
   quotes: none;
 }
-blockquote:before,
-blockquote:after,
-q:before,
-q:after {
+blockquote:before, blockquote:after,
+q:before, q:after {
   content: '';
   content: none;
 }
@@ -97,15 +54,53 @@ table {
   border-collapse: collapse;
   border-spacing: 0;
 }
+
+html {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
 body {
-  font-family: 'Open Sans', sans-serif;
-  line-height: 1;
-  letter-spacing: 0.05em;
-  background: linear-gradient(#ffffff, #eeeeee);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-family: 'PPNeueMontreal', 'Helvetica Neue';
+  font-size: clamp(24px, 31.1 / 1920 * 100vw, 31.1px);
+  font-weight: 500;
+  line-height: 1.2;
+  letter-spacing: 0;
+}
+a {
+  color: #393939;
+  text-decoration: none;
+  transition: 0.4s;
 }
 img {
   max-width: 100%;
+  height: auto;
 }
-a {
-  text-decoration: none;
+b {
+  font-weight: bold;
+}
+input,
+textarea,
+select {
+  -webkit-appearance: none;
+  appearance: none;
+  border: unset;
+}
+input:focus,
+textarea:focus,
+select:focus {
+  box-shadow: none;
+  outline: none;
+}
+input:-webkit-autofill {
+  box-shadow: 0 0 0px 1000px white inset;
+}
+button {
+  border: unset;
 }

@@ -1,8 +1,10 @@
+import path from 'path'
 import type { GatsbyConfig } from 'gatsby'
 
-let activeEnv = process.env.GATSBY_ACTIVE_ENV || process.env.NODE_ENV || "development"
+const activeEnv =
+  process.env.GATSBY_ACTIVE_ENV || process.env.NODE_ENV || 'development'
 
-require("dotenv").config({
+require('dotenv').config({
   path: `.env.${activeEnv}`,
 })
 
@@ -13,45 +15,56 @@ const config: GatsbyConfig = {
     author: `@TakayasuNasu`,
     siteUrl: `https://www.i-nasu.com`,
   },
+
+  graphqlTypegen: true,
+
   plugins: [
-    `gatsby-plugin-styled-components`,
     `gatsby-plugin-sass`,
-    `gatsby-transformer-sharp`,
+    `gatsby-plugin-styled-components`,
+    `gatsby-plugin-anchor-links`,
     `gatsby-plugin-sharp`,
+    `gatsby-plugin-image`,
+
+    {
+      resolve: `gatsby-transformer-sharp`,
+      options: {
+        checkSupportedExtensions: false,
+      },
+    },
+
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        name: 'images',
-        path: `${__dirname}/src/images/`,
-      }
+        name: `images`,
+        path: `./src/images/`,
+      },
+      __key: `images`,
     },
+
     {
-      resolve: `gatsby-source-filesystem`,
+      resolve: `gatsby-plugin-root-import`,
       options: {
-        name: 'portfolios',
-        path: `${__dirname}/contents/portfolios/`,
-      }
+        '@': path.join(__dirname, './src'),
+      },
     },
+
     {
-      resolve: 'gatsby-plugin-graphql-codegen',
+      resolve: `gatsby-plugin-manifest`,
       options: {
-        fileName: 'types/graphql-types.d.ts',
-        documentPaths: ['src/**/*.{ts,tsx}', 'gatsby-*.ts']
-      }
+        icon: `src/images/favicon.ico`,
+      },
     },
+
     {
-      resolve: `gatsby-plugin-mdx`,
+      resolve: `gatsby-source-contentful`,
       options: {
-        extensions: [`.mdx`, `.md`],
-      }
+        spaceId: process.env.CONTENTFUL_SPACE_ID,
+        accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
+        environment: process.env.CONTENTFUL_ENVIRONMENT,
+        host: process.env.CONTENTFUL_HOST || `cdn.contentful.com`,
+      },
     },
-    {
-      resolve: `gatsby-plugin-anchor-links`,
-      options: {
-        offset: -70
-      }
-    },
-  ]
+  ],
 }
 
 export default config

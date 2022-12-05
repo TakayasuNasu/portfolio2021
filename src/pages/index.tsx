@@ -1,21 +1,28 @@
 import React from 'react'
 import type { FC } from 'react'
+import type { HeadFC } from 'gatsby'
 import styled from 'styled-components'
-import media from 'styled-media-query'
-import Layout from '../components/layout'
-import SEO from '../components/seo'
-import MV from '../components/atoms/mv'
-import About from '../components/organisms/blocks/about'
-import Skills from '../components/organisms/blocks/skills'
-import Portfolio from '../components/organisms/blocks/portfolio'
-import Profile from '../components/organisms/blocks/profile'
-import Timeline from '../components/organisms/blocks/timeline'
-import Contact from '../components/organisms/blocks/contact'
-import Map from '../components/organisms/blocks/map'
+import media from '@/styles/custom-styled-media-query'
 
-const Container = styled.div`
+// components
+import Layout from '@/components/layout'
+import SEO from '@/components/seo'
+import Hero from '@/components/Hero'
+import About from '@/components/About'
+import Skils from '@/components/Skills'
+import Timeline from '@/components/Timeline'
+import Contact from '@/components/Contact'
+import Map from '@/components/Map'
+
+const StyledContainer = styled.div`
   display: grid;
   row-gap: 120px;
+  position: relative;
+  margin-inline: auto;
+  width: 90vw;
+  ${media.greaterThan('medium')`
+    width: min(85%, 940px);
+  `}
   div.contact-map {
     display: grid;
     row-gap: 50px;
@@ -26,19 +33,19 @@ const Container = styled.div`
 `
 
 const Page: FC = () => (
-  <Layout mv={<MV backgroundColorNumber={1} />}>
-    <SEO />
-    <Container>
+  <Layout>
+    <Hero />
+    <StyledContainer>
       <About />
-      <Skills />
-      <Portfolio />
-      <Profile />
+      <Skils />
       <Timeline />
       <div className="contact-map">
         <Contact />
         <Map />
       </div>
-    </Container>
+    </StyledContainer>
   </Layout>
 )
 export default Page
+
+export const Head: HeadFC = () => <SEO />

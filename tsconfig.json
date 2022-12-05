@@ -1,5 +1,5 @@
 {
-  "include": ["./src/**/*", "./gatsby-*.ts", "types/global.d.ts"],
+  "include": ["./src/**/*", "./gatsby-*.ts", "./gatsby-browser.tsx"],
   "compilerOptions": {
     "target": "es2019",
     "module": "commonjs",
@@ -7,9 +7,12 @@
     "jsx": "react",
     "strict": true,
     "esModuleInterop": true,
+    "typeRoots": ["types", "node_modules/@types"],
+    "forceConsistentCasingInFileNames": true,
+    "skipLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "graphql-types": ["types/graphql-types", "types/graphql-types-stub"]
+      "@/*": ["src/*"]
     }
   }
 }
