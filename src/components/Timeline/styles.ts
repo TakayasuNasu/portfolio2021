@@ -41,6 +41,9 @@ export const LI = styled.li<StyledProps>`
   & + li {
     margin-top: 50px;
     ${media.greaterThan('medium')`
+      margin-top: -26%;
+    `}
+    ${media.greaterThan('large')`
       margin-top: -12%;
     `}
   }

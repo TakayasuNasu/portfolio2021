@@ -21,7 +21,6 @@ const config: GatsbyConfig = {
   plugins: [
     `gatsby-plugin-sass`,
     `gatsby-plugin-styled-components`,
-    `gatsby-plugin-anchor-links`,
     `gatsby-plugin-sharp`,
     `gatsby-plugin-image`,
 
@@ -45,6 +44,13 @@ const config: GatsbyConfig = {
       resolve: `gatsby-plugin-root-import`,
       options: {
         '@': path.join(__dirname, './src'),
+      },
+    },
+
+    {
+      resolve: `gatsby-plugin-anchor-links`,
+      options: {
+        duration: 400,
       },
     },
 
