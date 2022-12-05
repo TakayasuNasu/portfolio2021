@@ -2,9 +2,9 @@ import styled from 'styled-components'
 import media from '@/styles/custom-styled-media-query'
 
 export const StyledH1 = styled.h1`
-  font-size: 22px;
+  font-size: clamp(10px, 24 / 426 * 100vw, 24px);
   ${media.greaterThan('medium')`
-    font-size: 24px;
+    font-size: clamp(16px, 28 / 1920 * 100vw, 28px);
   `}
 `
 

@@ -3,11 +3,12 @@ import type { FC } from 'react'
 import styled from 'styled-components'
 import media from '@/styles/custom-styled-media-query'
 import { useAppContext } from '@/context/store'
-import { _util } from '@/util/styled-util'
+import { _util, vmin } from '@/util/styled-util'
 
 const StyledMenu = styled.div`
   display: flex;
   align-items: center;
+  height: 100%;
   ${media.greaterThan('medium')`
     width: 45px;
     height: 45px;
@@ -16,16 +17,22 @@ const StyledMenu = styled.div`
   span.span {
     display: block;
     position: relative;
-    width: 45px;
+    width: ${vmin(54)};
     height: 6px;
+    ${media.greaterThan('medium')`
+      width: 45px;
+    `}
     border-radius: 5px;
     background-color: ${({ theme }) => theme.color.subText};
     transition: all 0.4s ease-in-out;
     &::before,
     &::after {
       ${_util.pseudo}
-      width: 45px;
+      width: ${vmin(54)};
       height: 6px;
+      ${media.greaterThan('medium')`
+        width: 45px;
+      `}
       border-radius: 5px;
       background-color: ${({ theme }) => theme.color.subText};
       transition: all 0.4s ease-in-out;

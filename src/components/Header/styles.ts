@@ -17,7 +17,7 @@ export const StyledHeader = styled.header`
     width: 90vw;
     height: 100%;
     ${media.greaterThan('large')`
-      width: 1024px;
+      width: min(85%, 940px);
     `}
     a {
       color: ${({ theme }) => theme.color.subText};

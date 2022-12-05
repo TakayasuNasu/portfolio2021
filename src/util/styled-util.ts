@@ -9,9 +9,9 @@ export const fontSmall = css`
 `
 
 export const fontMedium = css`
-  font-size: clamp(10px, 16 / 426 * 100vw, 18px);
+  font-size: clamp(10px, 18 / 426 * 100vw, 18px);
   ${media.greaterThan('medium')`
-    font-size: clamp(12px, 18 / 1920 * 100vw, 20px);
+    font-size: clamp(12px, 20 / 1920 * 100vw, 20px);
   `}
 `
 

@@ -34,6 +34,7 @@ export const Wrapper = styled.div`
     margin-left: auto;
     margin-right: 0;
     padding: 30px 14px;
+    width: 100%;
     ${media.greaterThan('medium')`
       width: 310px;
     `}

@@ -1,15 +1,20 @@
 import styled from 'styled-components'
+import media from '@/styles/custom-styled-media-query'
+import { fontSmall } from '@/util/styled-util'
 
 export const StyledPrimaryButton = styled.button`
   display: flex;
+  align-items: center;
+  padding: 10px 12px;
+  ${media.greaterThan('medium')`
+    padding: 10px 16px;
+  `}
+  ${fontSmall}
+  font-weight: bold;
   color: ${({ theme }) => theme.color.white};
   background-color: ${({ theme }) => theme.color.green};
-  padding: 10px 16px;
   transition: all 0.3s ease;
-  font-weight: bold;
   cursor: pointer;
-  align-items: center;
-  font-size: 14px;
   &:hover {
     span.arrow {
       transform: rotate(-45deg) translate(4px, 4px);
