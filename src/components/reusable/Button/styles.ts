@@ -54,3 +54,62 @@ export const StyledPrimaryButton = styled.button`
 export const StyledSecondlyButton = styled(StyledPrimaryButton)`
   background-color: ${({ theme }) => theme.color.blue};
 `
+
+export const StyledSkewed = styled.input`
+  display: none;
+  &:checked {
+    & + label {
+      background-color: ${({ theme }) => theme.color.blue};
+      &:before {
+        left: -100%;
+      }
+      &:after {
+        left: 0;
+      }
+      &:active:after {
+        left: 10%;
+      }
+    }
+  }
+`
+
+export const StyledSkewedLabel = styled.label`
+  overflow: hidden;
+  display: block;
+  position: relative;
+  margin-inline: auto;
+  width: 4em;
+  height: 2em;
+  transform: skew(-10deg) translate3d(0, 0, 0);
+  backface-visibility: hidden;
+  transition: all 0.2s ease;
+  cursor: pointer;
+  background-color: ${({ theme }) => theme.color.smoke};
+  &:after,
+  &:before {
+    display: inline-block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    font-weight: bold;
+    line-height: 2em;
+    color: ${({ theme }) => theme.color.light};
+    text-shadow: 0 1px 0 rgba(0, 0, 0, 0.4);
+    text-align: center;
+    transform: skew(10deg);
+    transition: all 0.2s ease;
+  }
+  &:before {
+    left: 0;
+    content: attr(data-label-off);
+  }
+  &:after {
+    left: 100%;
+    content: attr(data-label-on);
+  }
+  &:active {
+    &:before {
+      left: -10%;
+    }
+  }
+`

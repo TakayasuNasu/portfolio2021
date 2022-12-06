@@ -50,6 +50,7 @@ const config: GatsbyConfig = {
     {
       resolve: `gatsby-plugin-anchor-links`,
       options: {
+        offset: -70,
         duration: 400,
       },
     },

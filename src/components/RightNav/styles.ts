@@ -77,5 +77,8 @@ export const Wrapper = styled.div`
     font-size: 16px;
     color: #969696;
     align-self: end;
+    div.toggle {
+      margin-block: 20px;
+    }
   }
 `

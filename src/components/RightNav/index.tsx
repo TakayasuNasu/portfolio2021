@@ -19,6 +19,7 @@ import { useAppContext } from '@/context/store'
 // context and component
 import { H2 } from '@/components/reusable/Headlines'
 import SockalMedia from '@/components/SocialMedia'
+import Skewed from '@/components/reusable/Button/skewed'
 
 // style
 import { Wrapper } from './styles'
@@ -105,6 +106,9 @@ const RightNav: FC = (): JSX.Element => {
         </ul>
 
         <footer>
+          <div className="toggle">
+            <Skewed id="toggle-mode" labelOn="Light" labelOff="Dark" />
+          </div>
           <p>TAK {new Date().getFullYear()}. All rights reserved.</p>
         </footer>
       </nav>
