@@ -5,7 +5,8 @@
 const sharedStyles = {
   sharedColor: {
     light: '#ffffff',
-    black: '#393939',
+    dark: '#000000',
+    black: '#16181c',
     white: '#fafafa',
     smoke: '#898989',
     grey: '#969696',
@@ -30,8 +31,8 @@ export const lightTheme = {
 export const darkTheme = {
   color: {
     text: sharedStyles.sharedColor.light,
-    subText: sharedStyles.sharedColor.black,
-    bg: sharedStyles.sharedColor.black,
+    subText: sharedStyles.sharedColor.smoke,
+    bg: sharedStyles.sharedColor.dark,
     sbg: sharedStyles.sharedColor.black,
     border: sharedStyles.sharedColor.black,
     frame: sharedStyles.sharedColor.light,

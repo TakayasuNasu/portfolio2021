@@ -10,7 +10,7 @@ export const StyledFooter = styled.footer`
     margin-top: 80px;
     padding-bottom: 70px;
   `}
-  background-color: #ffffff;
+  background-color: ${({ theme }) => theme.color.bg};
   p.copy {
     font-size: 16px;
   }

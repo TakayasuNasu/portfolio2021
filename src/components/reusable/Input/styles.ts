@@ -5,6 +5,7 @@ export const Input = styled.input`
   display: block;
   width: 100%;
   font: inherit;
+  color: ${({ theme }) => theme.color.text};
   background-color: transparent;
   border-radius: 0;
   border-bottom: solid 1px ${({ theme }) => theme.color.border};
@@ -20,6 +21,10 @@ export const Input = styled.input`
     & + label {
       transform: translateY(-1.5rem);
     }
+  }
+  &:-webkit-autofill {
+    -webkit-text-fill-color: ${({ theme }) => theme.color.text};
+    box-shadow: 0 0 0px 1000px ${({ theme }) => theme.color.sbg} inset;
   }
 `
 

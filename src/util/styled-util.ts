@@ -38,7 +38,10 @@ export const vmax = (num: number, base = 426) => {
 
 // toolbox
 export const _util = {
-  shadow: `box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.03), 0 3px 1px -2px rgba(0, 0, 0, 0.03), 0 1px 5px 0 rgba(0, 0, 0, 0.03);`,
+  shadow: `box-shadow:
+    0 2px 2px 0 rgba(0, 0, 0, 0.03),
+    0 3px 1px -2px rgba(0, 0, 0, 0.03),
+    0 1px 5px 0 rgba(0, 0, 0, 0.03);`,
   pseudo: `
     content: '';
     position: absolute;

@@ -25,6 +25,11 @@ export const Section = styled.section`
       background-size: cover;
     `}
   }
+  &[data-mode='dark'] {
+    &::after {
+      background-image: url('/img/bg/wave-dark.svg');
+    }
+  }
   &[data-backdrop='true'] {
     margin-bottom: ${vmax(-50)};
     ${media.greaterThan('medium')`

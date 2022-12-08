@@ -1,5 +1,6 @@
 import styled from 'styled-components'
 import media from '@/styles/custom-styled-media-query'
+import { _util } from '@/util/styled-util'
 
 export const Section = styled.section`
   display: grid;
@@ -14,9 +15,8 @@ export const Section = styled.section`
     padding-bottom: 30px;
     padding-left: 20px;
     padding-right: 20px;
-    background-color: #ffffff;
-    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.03),
-      0 3px 1px -2px rgba(0, 0, 0, 0.03), 0 1px 5px 0 rgba(0, 0, 0, 0.03);
+    background-color: ${({ theme }) => theme.color.sbg};
+    ${_util.shadow};
   }
 `
 

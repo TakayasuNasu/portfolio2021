@@ -66,7 +66,7 @@ export const LI = styled.li<StyledProps>`
       width: calc(100% - 40px);
     `}
     ${_util.shadow};
-    background-color: #ffffff;
+    background-color: ${({ theme }) => theme.color.sbg};
     border-top: 3px solid ${props => props.borderColor || '#2879ff'};
     &:before,
     &:after {

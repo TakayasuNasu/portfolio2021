@@ -3,7 +3,7 @@ import media from '@/styles/custom-styled-media-query'
 import { _util } from '@/util/styled-util'
 
 export const Section = styled.section`
-  background-color: ${({ theme }) => theme.color.bg};
+  background-color: ${({ theme }) => theme.color.sbg};
   ${_util.shadow};
   div.inner {
     padding: 45px 25px;
