@@ -28,14 +28,15 @@ export const Wrapper = styled.div`
     z-index: 10;
     top: 70px;
     bottom: 0;
-    left: 0;
-    right: 0;
+    inset-inline: 0;
     overflow-y: scroll;
     margin-left: auto;
     margin-right: 0;
-    padding: 30px 14px;
+    padding-block: 30px;
+    padding-inline: ${vmin(30)};
     width: 100%;
     ${media.greaterThan('medium')`
+      padding-inline: 30px;
       width: 310px;
     `}
     background-color: rgb(43, 43, 43);
@@ -60,12 +61,12 @@ export const Wrapper = styled.div`
   ul.link-list {
     display: grid;
     row-gap: 24px;
-    justify-content: center;
+    justify-content: flex-start;
     a {
       font-size: 18px;
-      color: #969696;
+      color: ${({ theme }) => theme.color.grey};
       &.active {
-        color: #ffffff;
+        color: ${({ theme }) => theme.color.light};
       }
     }
     svg {
@@ -75,7 +76,7 @@ export const Wrapper = styled.div`
   }
   footer {
     font-size: 16px;
-    color: #969696;
+    color: ${({ theme }) => theme.color.grey};
     align-self: end;
     div.toggle {
       margin-block: 20px;

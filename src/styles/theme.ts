@@ -8,6 +8,7 @@ const sharedStyles = {
     black: '#393939',
     white: '#fafafa',
     smoke: '#898989',
+    grey: '#969696',
     green: '#4CAF50',
     blue: '#2879ff',
     transparent: 'transparent',

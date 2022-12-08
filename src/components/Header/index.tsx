@@ -7,6 +7,7 @@ import Link from '@/components/reusable/Link'
 import { H1 } from '@/components/reusable/Headlines/'
 import { Primary as ContactButton } from '@/components/reusable/Button'
 import MenuButton from '@/components/reusable/Button/menu'
+import Skewed from '@/components/reusable/Button/skewed'
 
 // style
 import { StyledHeader } from './styles'
@@ -30,6 +31,9 @@ const Header: FC = (): JSX.Element => {
           </li>
           <li>
             <AnchorLink to="/#timeline">Timeline</AnchorLink>
+          </li>
+          <li>
+            <Skewed id="toggle-mode" labelOn="Light" labelOff="Dark" />
           </li>
         </ul>
         <AnchorLink to="/#contact">

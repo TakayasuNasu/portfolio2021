@@ -12,24 +12,30 @@ import React, {
 
 type State = {
   expanded: boolean
+  mode: 'light' | 'dark'
 }
 
-type ActionType = { type: 'OPEN_CLOSE'; payload: boolean }
+type ActionType =
+  | { type: 'OPEN_CLOSE'; payload: boolean }
+  | { type: 'MODE_SWITCH'; payload: 'light' | 'dark' }
 
 type Store = {
   state: State
   open: () => void
   close: () => void
   toggle: () => void
+  toggleMode: (mode: 'light' | 'dark') => void
 }
 
 const initialState: Store = {
   state: {
     expanded: false,
+    mode: 'dark',
   },
   open: () => ({}),
   close: () => ({}),
   toggle: () => ({}),
+  toggleMode: () => ({}),
 }
 
 const AppContext = createContext<Store>(initialState)
@@ -42,6 +48,11 @@ const reducer = (state: State, action: ActionType): State => {
       return {
         ...state,
         expanded: action.payload,
+      }
+    case 'MODE_SWITCH':
+      return {
+        ...state,
+        mode: action.payload,
       }
   }
 }
@@ -74,8 +85,15 @@ export const AppContextProvider = ({
     })
   }
 
+  const toggleMode = (mode: 'light' | 'dark') => {
+    dispatch({
+      type: 'MODE_SWITCH',
+      payload: mode,
+    })
+  }
+
   return (
-    <AppContext.Provider value={{ state, open, close, toggle }}>
+    <AppContext.Provider value={{ state, open, close, toggle, toggleMode }}>
       {children}
     </AppContext.Provider>
   )

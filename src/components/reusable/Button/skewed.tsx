@@ -1,6 +1,8 @@
 import React from 'react'
+import { useAppContext } from '@/context/store'
 
-import { StyledSkewed, StyledSkewedLabel } from './styles'
+// style
+import { StyledSkewedInput, StyledSkewedLabel } from './styles'
 
 type ComponentProps = {
   labelOn: string
@@ -12,9 +14,27 @@ type ComponentProps = {
 
 const Skewed = React.forwardRef<HTMLInputElement, ComponentProps>(
   ({ id, labelOn, labelOff }, ref): JSX.Element => {
+    const {
+      state: { mode },
+      toggleMode,
+    } = useAppContext()
+
+    const checkd = mode == 'light'
+
+    const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+      const mode = e.target.checked ? 'light' : 'dark'
+      toggleMode(mode)
+    }
+
     return (
       <>
-        <StyledSkewed type="checkbox" id={id} ref={ref} />
+        <StyledSkewedInput
+          type="checkbox"
+          id={id}
+          ref={ref}
+          checked={checkd}
+          onChange={handleChange}
+        />
         <StyledSkewedLabel
           htmlFor={id}
           data-label-on={labelOn}

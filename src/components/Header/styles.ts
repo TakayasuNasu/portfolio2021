@@ -28,7 +28,8 @@ export const StyledHeader = styled.header`
     display: none;
     ${media.greaterThan('medium')`
       display: grid;
-      grid-template-columns: repeat(4, auto);
+      grid-template-columns: repeat(5, auto);
+      align-items: center;
       column-gap: ${vmin(24, 1920)};
       ${fontLarge}
     `}

@@ -107,7 +107,7 @@ const RightNav: FC = (): JSX.Element => {
 
         <footer>
           <div className="toggle">
-            <Skewed id="toggle-mode" labelOn="Light" labelOff="Dark" />
+            <Skewed id="toggle-mode-sidebar" labelOn="Light" labelOff="Dark" />
           </div>
           <p>TAK {new Date().getFullYear()}. All rights reserved.</p>
         </footer>

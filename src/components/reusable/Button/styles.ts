@@ -55,7 +55,7 @@ export const StyledSecondlyButton = styled(StyledPrimaryButton)`
   background-color: ${({ theme }) => theme.color.blue};
 `
 
-export const StyledSkewed = styled.input`
+export const StyledSkewedInput = styled.input`
   display: none;
   &:checked {
     & + label {
@@ -77,7 +77,6 @@ export const StyledSkewedLabel = styled.label`
   overflow: hidden;
   display: block;
   position: relative;
-  margin-inline: auto;
   width: 4em;
   height: 2em;
   transform: skew(-10deg) translate3d(0, 0, 0);
