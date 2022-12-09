@@ -1,5 +1,6 @@
 import styled from 'styled-components'
 import media from '@/styles/custom-styled-media-query'
+import { fontMedium } from '@/util/styled-util'
 
 export const Section = styled.section`
   div.header {
@@ -102,13 +103,17 @@ export const VisualBlock = styled.div`
     &:hover {
       transform: scale(1.1, 1.1);
     }
+    > div {
+      height: 100%;
+    }
   }
   span.title {
     position: absolute;
     bottom: 20px;
     left: 20px;
+    ${fontMedium}
     font-weight: 500;
-    color: #ffffff;
+    color: ${({ theme }) => theme.color.light};
   }
 `
 

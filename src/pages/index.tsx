@@ -10,6 +10,8 @@ import SEO from '@/components/seo'
 import Hero from '@/components/Hero'
 import About from '@/components/About'
 import Skils from '@/components/Skills'
+import Portfolio from '@/components/Portfolio'
+import Profile from '@/components/Profile'
 import Timeline from '@/components/Timeline'
 import Contact from '@/components/Contact'
 import Map from '@/components/Map'
@@ -38,6 +40,8 @@ const Page: FC = () => (
     <StyledContainer>
       <About />
       <Skils />
+      <Portfolio />
+      <Profile />
       <Timeline />
       <div className="contact-map">
         <Contact />

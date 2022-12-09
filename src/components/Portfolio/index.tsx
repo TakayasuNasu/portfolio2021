@@ -1,7 +1,9 @@
 import React, { useState } from 'react'
 import type { FC } from 'react'
+import { GatsbyImage } from 'gatsby-plugin-image'
 import { FiExternalLink, FiList } from 'react-icons/fi'
 import Link from '@/components/reusable/Link'
+import useAllFile from '@/hooks/useAllFile'
 import { H3 } from '@/components/reusable/Headlines'
 
 // style
@@ -9,6 +11,14 @@ import { Section, UL, Wrapper, VisualBlock, Div } from './styles'
 
 // data
 import Data from '@/data/yml/portfolio.yml'
+
+const data = Data as Array<{
+  img: string
+  title: string
+  siteUrl: string
+  pageUrl: string
+  type: string
+}>
 
 const Portfolio: FC = (): JSX.Element => {
   const [type, setType] = useState('ALL')
@@ -18,8 +28,7 @@ const Portfolio: FC = (): JSX.Element => {
     setType(e.target.innerHTML)
   }
 
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  const Cards = Data.map((data: any, i: number) => {
+  const cards = data.map((data, i: number) => {
     const className = type != 'ALL' ? (data.type != type ? 'hide' : '') : ''
     return (
       <li className={`card ${className}`} key={i + data.title}>
@@ -43,13 +52,13 @@ const Portfolio: FC = (): JSX.Element => {
   })
 
   return (
-    <Section>
+    <Section id="portfolio">
       <div className="header">
         <H3>Portfolio</H3>
         <ul className="list">{menu}</ul>
       </div>
 
-      <UL>{Cards}</UL>
+      <UL>{cards}</UL>
     </Section>
   )
 }
@@ -69,11 +78,20 @@ const Card: FC<ComponentProps> = ({
   siteUrl = '',
   pageUrl = '/',
 }): JSX.Element => {
-  console.log(img)
+  const images = useAllFile()
+  const image = images.find(image => image.relativePath == `portfolio/${img}`)
+
   return (
     <Wrapper>
       <VisualBlock>
-        <figure className="image"></figure>
+        <figure className="image">
+          {image?.childImageSharp?.gatsbyImageData && (
+            <GatsbyImage
+              image={image?.childImageSharp?.gatsbyImageData}
+              alt="site image"
+            />
+          )}
+        </figure>
         <span className="title">{title}</span>
       </VisualBlock>
       <Div className="bottom">

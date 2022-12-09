@@ -3451,6 +3451,11 @@ type contentfulSiteMastaDataJsonNodeSysSortInput = {
   readonly type: InputMaybe<SortOrderEnum>;
 };
 
+type allFileQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+type allFileQuery = { readonly allFile: { readonly nodes: ReadonlyArray<{ readonly relativePath: string, readonly childImageSharp: { readonly gatsbyImageData: import('gatsby-plugin-image').IGatsbyImageData } | null }> } };
+
 type allPageQueryVariables = Exact<{ [key: string]: never; }>;
 
 

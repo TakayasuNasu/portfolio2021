@@ -5,6 +5,7 @@ import { AnchorLink } from 'gatsby-plugin-anchor-links'
 
 // hooks and components
 import useSiteMasta from '@/hooks/useContentfulSiteMasta'
+import { useAppContext } from '@/context/store'
 import { H2, H3 } from '@/components/reusable/Headlines'
 import { Primary as ContactButton } from '@/components/reusable/Button'
 import SockalMedia from '@/components/SocialMedia'
@@ -21,12 +22,20 @@ const About: FC = (): JSX.Element => {
     }
   })
 
+  const {
+    state: { mode },
+  } = useAppContext()
+
   return (
     <Section>
       <div className="inner">
         <div className="pic">
           <figure className="img">
-            <StaticImage src="../../images/face.png" alt="Picture of me." />
+            {mode == 'light' ? (
+              <StaticImage src="../../images/face.jpg" alt="Picture of me." />
+            ) : (
+              <StaticImage src="../../images/face.png" alt="Picture of me." />
+            )}
           </figure>
 
           <SockalMedia />
