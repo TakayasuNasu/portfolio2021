@@ -41,6 +41,14 @@ const config: GatsbyConfig = {
     },
 
     {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: 'portfolios',
+        path: `${__dirname}/contents/portfolios/`,
+      },
+    },
+
+    {
       resolve: `gatsby-plugin-root-import`,
       options: {
         '@': path.join(__dirname, './src'),
@@ -51,7 +59,7 @@ const config: GatsbyConfig = {
       resolve: `gatsby-plugin-anchor-links`,
       options: {
         offset: -70,
-        duration: 400,
+        duration: 200,
       },
     },
 
@@ -59,6 +67,13 @@ const config: GatsbyConfig = {
       resolve: `gatsby-plugin-manifest`,
       options: {
         icon: `src/images/favicon.ico`,
+      },
+    },
+
+    {
+      resolve: `gatsby-plugin-mdx`,
+      options: {
+        extensions: [`.mdx`, `.md`],
       },
     },
 

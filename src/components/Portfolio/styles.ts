@@ -129,3 +129,7 @@ export const Div = styled.div`
     }
   }
 `
+
+export const StyledCaseStudy = styled.section`
+  background-color: ${({ theme }) => theme.color.sbg};
+`

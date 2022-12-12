@@ -1,6 +1,6 @@
 ---
 title: 'social-game'
-slug: /social-game
+slug: social-game
 date: January 2014 - October 2014
 info: Continued to release Smartphone game which over 100 php files, built with over 100 tables, used by over 10,000 people daily consistently.
 techStack: php/Smarty/MySql/JavaScript/Jira
@@ -11,14 +11,3 @@ files:
   - social-game01.png
   - social-game02.png
 ---
-
-import PrePostNav from '../../src/components/molecules/pre-post-nav.tsx'
-
-export const params = {
-preUrl: '/portfolio/original-cms',
-postUrl: '/portfolio/hikari-tv',
-preText: 'Original CMS',
-postText: 'Hikari TV',
-}
-
-<PrePostNav {...params} />
