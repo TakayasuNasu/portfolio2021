@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 import media from '@/styles/custom-styled-media-query'
-import { vmin, vmax } from '@/util/styled-util'
+import { vmin } from '@/util/styled-util'
 
 export const Section = styled.section`
   position: relative;
@@ -31,7 +31,7 @@ export const Section = styled.section`
     }
   }
   &[data-backdrop='true'] {
-    margin-bottom: ${vmax(-50)};
+    margin-bottom: ${vmin(-80)};
     ${media.greaterThan('medium')`
       margin-bottom: ${vmin(-50)};
     `}

@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 import media from '@/styles/custom-styled-media-query'
-import { fontMedium, fontLarge, vmin } from '@/util/styled-util'
+import { fontSmall, fontMedium, fontLarge, vmin } from '@/util/styled-util'
 
 export const Section = styled.section`
   div.header {
@@ -142,20 +142,94 @@ export const StyledCaseStudy = styled.section`
   }
   header {
     h2 {
-      margin-top: ${vmin(100)};
+      margin-top: ${vmin(80)};
+      ${media.greaterThan('medium')`
+        margin-top: ${vmin(120, 1920)};
+      `}
     }
   }
   dl.info {
     display: grid;
     justify-content: flex-start;
     column-gap: 24px;
+    row-gap: 12px;
+    margin-top: ${vmin(24)};
     ${fontMedium}
     ${media.greaterThan('medium')`
       grid-template-columns: auto auto;
+      margin-top: ${vmin(64, 1920)};
     `}
     dt {
       font-weight: 500;
       color: ${({ theme }) => theme.color.grey};
+    }
+  }
+  ul.main {
+    display: grid;
+    row-gap: ${vmin(60)};
+    margin-top: ${vmin(60)};
+    ${media.greaterThan('medium')`
+      row-gap: ${vmin(120, 1920)};
+      margin-top: ${vmin(120, 1920)};
+    `}
+  }
+  figure {
+    aspect-ratio: 16/9;
+    > div {
+      height: 100%;
+    }
+  }
+  li.body {
+    ${fontMedium}
+    h2, h3, h4, h5, h6 {
+      padding-block: ${vmin(24)};
+      ${media.greaterThan('medium')`
+        padding-block: ${vmin(48, 1920)};
+      `}
+      font-weight: 500;
+    }
+    h2 {
+      font-size: clamp(18px, 26 / 426 * 100vw, 26px);
+      ${media.greaterThan('medium')`
+        font-size: clamp(26px, 42 / 1920 * 100vw, 42px);
+      `}
+    }
+    h3 {
+      font-size: clamp(16px, 24 / 426 * 100vw, 24px);
+      ${media.greaterThan('medium')`
+        font-size: clamp(16px, 28 / 1920 * 100vw, 28px);
+      `}
+    }
+    h4 {
+      ${fontLarge}
+    }
+    h5 {
+      ${fontMedium}
+    }
+    h6 {
+      ${fontSmall}
+    }
+    p {
+      line-height: 1.4;
+    }
+    p,
+    ul,
+    blockquote {
+      & + * {
+        margin-top: 12px;
+      }
+    }
+    blockquote {
+      padding-block: ${vmin(24)};
+      ${media.greaterThan('medium')`
+        padding-block: ${vmin(48, 1920)};
+      `}
+      text-align: center;
+      border-top: 1px solid ${({ theme }) => theme.color.border};
+      border-bottom: 1px solid ${({ theme }) => theme.color.border};
+    }
+    > *:first-child {
+      padding-top: 0;
     }
   }
 `

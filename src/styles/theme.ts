@@ -34,7 +34,7 @@ export const darkTheme = {
     subText: sharedStyles.sharedColor.smoke,
     bg: sharedStyles.sharedColor.dark,
     sbg: sharedStyles.sharedColor.black,
-    border: sharedStyles.sharedColor.black,
+    border: sharedStyles.sharedColor.white,
     frame: sharedStyles.sharedColor.light,
     ...sharedStyles.sharedColor,
   },

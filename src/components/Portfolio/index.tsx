@@ -23,9 +23,8 @@ const data = Data as Array<{
 const Portfolio: FC = (): JSX.Element => {
   const [type, setType] = useState('ALL')
 
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  const handleClick = (e: any) => {
-    setType(e.target.innerHTML)
+  const handleClick = (e: React.MouseEvent<HTMLLIElement>) => {
+    setType(e.currentTarget.innerHTML)
   }
 
   const cards = data.map((data, i: number) => {
@@ -45,7 +44,7 @@ const Portfolio: FC = (): JSX.Element => {
   const menu = ['ALL', 'SYSTEM', 'CMS', 'GAME'].map(text => {
     const className = type == text ? 'active' : ''
     return (
-      <li className={className} onClick={e => handleClick(e)} key={text}>
+      <li className={className} onClick={handleClick} key={text}>
         {text}
       </li>
     )

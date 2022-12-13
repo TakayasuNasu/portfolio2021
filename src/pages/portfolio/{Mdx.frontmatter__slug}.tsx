@@ -25,13 +25,14 @@ const StyledContainer = styled.div`
 
 const Page: FC<PageProps<Queries.portfolioBySlugQuery>> = ({
   data: { mdx },
+  children,
 }): JSX.Element => {
   if (!mdx?.frontmatter) return <></>
   return (
     <Layout>
       <Hero />
       <StyledContainer>
-        <CaseStudy {...{ ...mdx.frontmatter }} />
+        <CaseStudy {...{ ...mdx.frontmatter, children }} />
       </StyledContainer>
     </Layout>
   )
@@ -47,6 +48,7 @@ export const pageQuery = graphql`
         date
         client
         techStack
+        files
       }
     }
   }
