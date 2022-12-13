@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 import media from '@/styles/custom-styled-media-query'
-import { fontMedium } from '@/util/styled-util'
+import { fontMedium, fontLarge, vmin } from '@/util/styled-util'
 
 export const Section = styled.section`
   div.header {
@@ -132,4 +132,30 @@ export const Div = styled.div`
 
 export const StyledCaseStudy = styled.section`
   background-color: ${({ theme }) => theme.color.sbg};
+  div.inner {
+    padding: 45px 25px;
+    aside {
+      > p {
+        ${fontLarge}
+      }
+    }
+  }
+  header {
+    h2 {
+      margin-top: ${vmin(100)};
+    }
+  }
+  dl.info {
+    display: grid;
+    justify-content: flex-start;
+    column-gap: 24px;
+    ${fontMedium}
+    ${media.greaterThan('medium')`
+      grid-template-columns: auto auto;
+    `}
+    dt {
+      font-weight: 500;
+      color: ${({ theme }) => theme.color.grey};
+    }
+  }
 `

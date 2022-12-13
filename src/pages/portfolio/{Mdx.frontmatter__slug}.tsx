@@ -2,6 +2,8 @@ import React from 'react'
 import type { FC } from 'react'
 import type { HeadFC } from 'gatsby'
 import { graphql, PageProps } from 'gatsby'
+import styled from 'styled-components'
+import media from '@/styles/custom-styled-media-query'
 
 // components
 import Layout from '@/components/layout'
@@ -9,15 +11,28 @@ import SEO from '@/components/seo'
 import Hero from '@/components/Hero'
 import CaseStudy from '@/components/Portfolio/caseStudy'
 
+// style
+const StyledContainer = styled.div`
+  display: grid;
+  row-gap: 120px;
+  position: relative;
+  margin-inline: auto;
+  width: 90vw;
+  ${media.greaterThan('medium')`
+    width: min(85%, 940px);
+  `}
+`
+
 const Page: FC<PageProps<Queries.portfolioBySlugQuery>> = ({
   data: { mdx },
 }): JSX.Element => {
   if (!mdx?.frontmatter) return <></>
-  const { title } = mdx.frontmatter
   return (
     <Layout>
       <Hero />
-      {title && <CaseStudy {...{ title }} />}
+      <StyledContainer>
+        <CaseStudy {...{ ...mdx.frontmatter }} />
+      </StyledContainer>
     </Layout>
   )
 }
@@ -29,6 +44,9 @@ export const pageQuery = graphql`
     mdx(frontmatter: { slug: { eq: $frontmatter__slug } }) {
       frontmatter {
         title
+        date
+        client
+        techStack
       }
     }
   }

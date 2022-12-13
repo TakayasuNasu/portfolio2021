@@ -3728,7 +3728,7 @@ type portfolioBySlugQueryVariables = Exact<{
 }>;
 
 
-type portfolioBySlugQuery = { readonly mdx: { readonly frontmatter: { readonly title: string | null } | null } | null };
+type portfolioBySlugQuery = { readonly mdx: { readonly frontmatter: { readonly title: string | null, readonly date: string | null, readonly client: string | null, readonly techStack: string | null } | null } | null };
 
 type siteMastaQueryVariables = Exact<{ [key: string]: never; }>;
 

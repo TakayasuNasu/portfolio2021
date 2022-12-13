@@ -18,11 +18,11 @@ export const StyledH2 = styled.h2`
 `
 
 export const StyledH3 = styled.h3`
-  font-size: 18px;
+  font-size: clamp(16px, 28 / 426 * 100vw, 28px);
   font-weight: 500;
   color: ${props => props.color || '#898989'};
   ${media.greaterThan('medium')`
-    font-size: 24px;
+    font-size: clamp(28px, 46 / 1920 * 100vw, 46px);
   `}
 `
 

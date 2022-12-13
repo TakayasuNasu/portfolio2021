@@ -2,21 +2,38 @@ import React from 'react'
 import type { FC } from 'react'
 
 // components
-import { H2, H3 } from '@/components/reusable/Headlines'
+import { H2 } from '@/components/reusable/Headlines'
 
 // style
 import { StyledCaseStudy } from './styles'
 
 type ComponentProps = {
-  title: string
+  title: string | null
+  date: string | null
+  client: string | null
+  techStack: string | null
 }
 
-const CaseStudy: FC<ComponentProps> = ({ title }): JSX.Element => {
+const CaseStudy: FC<ComponentProps> = ({
+  title,
+  client,
+  techStack,
+}): JSX.Element => {
   return (
     <StyledCaseStudy>
       <div className="inner">
-        <H2>CASE STUDY</H2>
-        <H3>{title}</H3>
+        <header>
+          <aside>
+            <p>- CASE STUDY</p>
+          </aside>
+          <H2>{title}</H2>
+        </header>
+        <dl className="info">
+          <dt>CLIENT</dt>
+          <dd>{client}</dd>
+          <dt>TECH STACK</dt>
+          <dd>{techStack}</dd>
+        </dl>
       </div>
     </StyledCaseStudy>
   )
