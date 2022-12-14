@@ -12,13 +12,15 @@ import { Section, UL, Wrapper, VisualBlock, Div } from './styles'
 // data
 import Data from '@/data/yml/portfolio.yml'
 
-const data = Data as Array<{
+export type PortfolioYML = {
   img: string
   title: string
   siteUrl: string
   pageUrl: string
   type: string
-}>
+}
+
+const data = Data as Array<PortfolioYML>
 
 const Portfolio: FC = (): JSX.Element => {
   const [type, setType] = useState('ALL')
@@ -71,7 +73,7 @@ type ComponentProps = {
   pageUrl: string
 }
 
-const Card: FC<ComponentProps> = ({
+export const Card: FC<ComponentProps> = ({
   img = 's-portal.png',
   title = 'S-Portal',
   siteUrl = '',

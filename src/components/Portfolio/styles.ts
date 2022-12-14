@@ -175,6 +175,7 @@ export const StyledCaseStudy = styled.section`
   }
   figure {
     aspect-ratio: 16/9;
+    text-align: center;
     > div {
       height: 100%;
     }
