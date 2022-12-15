@@ -2,14 +2,14 @@
   img: s-portal.png
   title: S-Portal
   siteUrl: ''
-  pageUrl: /portfolio/s-portal
+  pageUrl: /portfolio/s-portal/
   type: CMS
 
 - id: 2
   img: feedlp01.png
   title: FeedLP
   siteUrl: https://www.itstaffing.jp/lp/fd002
-  pageUrl: /portfolio/feedlp
+  pageUrl: /portfolio/feedlp/
   type: SYSTEM
 
 - id: 3
@@ -23,26 +23,26 @@
   img: original-cms01.jpg
   title: Original CMS
   siteUrl: https://www.pharmaproduct.co.jp
-  pageUrl: /portfolio/original-cms
+  pageUrl: /portfolio/original-cms/
   type: CMS
 
 - id: 5
   img: social-game01.png
   title: Social game applications
   siteUrl: ''
-  pageUrl: /portfolio/social-game
+  pageUrl: /portfolio/social-game/
   type: GAME
 
 - id: 6
   img: video-on-demand01.png
   title: Video On Demand
   siteUrl: https://www.hikaritv.net
-  pageUrl: /portfolio/hikari-tv
+  pageUrl: /portfolio/hikari-tv/
   type: SYSTEM
 
 - id: 7
   img: momokoplanet01.png
   title: Momoko Planet
   siteUrl: ''
-  pageUrl: /portfolio/momoko-planet
+  pageUrl: /portfolio/momoko-planet/
   type: CMS

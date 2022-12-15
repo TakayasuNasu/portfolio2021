@@ -1,11 +1,16 @@
 import { useState, useEffect } from 'react'
 
 const useMedia = <T>(queries: string[], values: T[], defaultValue: T) => {
-  const mediaQueryLists = queries.map(q => window.matchMedia(q))
+  const mediaQueryLists = queries.map(q => {
+    if (typeof window == `undefined`) {
+      return null
+    }
+    return window.matchMedia(q)
+  })
 
   // Function that gets value based on matching media query
   const getValue = () => {
-    const index = mediaQueryLists.findIndex(mql => mql.matches)
+    const index = mediaQueryLists.findIndex(mql => mql?.matches)
     return values?.[index] || defaultValue
   }
 
@@ -13,9 +18,11 @@ const useMedia = <T>(queries: string[], values: T[], defaultValue: T) => {
 
   useEffect(() => {
     const handler = () => setValue(getValue)
-    mediaQueryLists.forEach(mql => mql.addEventListener('change', handler))
+    mediaQueryLists.forEach(mql => mql?.addEventListener('change', handler))
     return () =>
-      mediaQueryLists.forEach(mql => mql.removeEventListener('change', handler))
+      mediaQueryLists.forEach(mql =>
+        mql?.removeEventListener('change', handler)
+      )
   }, [])
 
   return value
