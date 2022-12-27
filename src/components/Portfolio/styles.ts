@@ -212,6 +212,15 @@ export const StyledCaseStudy = styled.section`
     }
     p {
       line-height: 1.4;
+      a {
+        color: ${({ theme }) => theme.color.text};
+        text-decoration: underline;
+      }
+    }
+    > p {
+      ${media.greaterThan('large')`
+      width: 84%;
+    `}
     }
     p,
     ul,
