@@ -44,31 +44,31 @@ const RightNav: FC = (): JSX.Element => {
         <SockalMedia />
 
         <ul className="link-list">
-          <li>
+          <li onClick={close}>
             <AnchorLink to="/#skills">
               <FaFileAlt />
               Skills
             </AnchorLink>
           </li>
-          <li>
+          <li onClick={close}>
             <AnchorLink to="/#portfolio">
               <MdWeb />
               Portfolio
             </AnchorLink>
           </li>
-          <li>
+          <li onClick={close}>
             <AnchorLink to="/#profile">
               <FaRegFolder />
               Profile
             </AnchorLink>
           </li>
-          <li>
+          <li onClick={close}>
             <AnchorLink to="/#timeline">
               <FaRegFile />
               Timeline
             </AnchorLink>
           </li>
-          <li>
+          <li onClick={close}>
             <AnchorLink to="/#contact">
               <FaEnvelope />
               Contact
@@ -76,9 +76,13 @@ const RightNav: FC = (): JSX.Element => {
           </li>
 
           <li>
-            <a href="https://blog.i-nasu.com" target="_blank" rel="noreferrer">
+            <a
+              href="https://weblog.i-nasu.com/"
+              target="_blank"
+              rel="noreferrer"
+            >
               <FaBookOpen />
-              Blog-ja
+              Blog
             </a>
           </li>
 
