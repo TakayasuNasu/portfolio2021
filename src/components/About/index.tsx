@@ -41,9 +41,7 @@ const About: FC = (): JSX.Element => {
           <SockalMedia />
 
           <p className="about">
-            Senior Full-Stack Web Developer with more than 10 years of
-            experience in Information Technology Industry. Fukuoka university |
-            Oita.
+            {data && data.find(d => d.key == 'introduction')?.value}
           </p>
         </div>
 
