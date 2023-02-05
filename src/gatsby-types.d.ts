@@ -1023,6 +1023,8 @@ type ContentfulPost = ContentfulEntry & ContentfulReference & Node & {
   readonly name: Maybe<Scalars['String']>;
   readonly node_locale: Scalars['String'];
   readonly parent: Maybe<Node>;
+  readonly post: Maybe<ReadonlyArray<Maybe<ContentfulPost>>>;
+  readonly reply: Maybe<ContentfulPost>;
   readonly slug: Maybe<Scalars['String']>;
   readonly spaceId: Maybe<Scalars['String']>;
   readonly sys: Maybe<ContentfulPostSys>;
@@ -1104,6 +1106,8 @@ type ContentfulPostFieldSelector = {
   readonly name: InputMaybe<FieldSelectorEnum>;
   readonly node_locale: InputMaybe<FieldSelectorEnum>;
   readonly parent: InputMaybe<NodeFieldSelector>;
+  readonly post: InputMaybe<ContentfulPostFieldSelector>;
+  readonly reply: InputMaybe<ContentfulPostFieldSelector>;
   readonly slug: InputMaybe<FieldSelectorEnum>;
   readonly spaceId: InputMaybe<FieldSelectorEnum>;
   readonly sys: InputMaybe<ContentfulPostSysFieldSelector>;
@@ -1124,6 +1128,8 @@ type ContentfulPostFilterInput = {
   readonly name: InputMaybe<StringQueryOperatorInput>;
   readonly node_locale: InputMaybe<StringQueryOperatorInput>;
   readonly parent: InputMaybe<NodeFilterInput>;
+  readonly post: InputMaybe<ContentfulPostFilterListInput>;
+  readonly reply: InputMaybe<ContentfulPostFilterInput>;
   readonly slug: InputMaybe<StringQueryOperatorInput>;
   readonly spaceId: InputMaybe<StringQueryOperatorInput>;
   readonly sys: InputMaybe<ContentfulPostSysFilterInput>;
@@ -1189,6 +1195,8 @@ type ContentfulPostSortInput = {
   readonly name: InputMaybe<SortOrderEnum>;
   readonly node_locale: InputMaybe<SortOrderEnum>;
   readonly parent: InputMaybe<NodeSortInput>;
+  readonly post: InputMaybe<ContentfulPostSortInput>;
+  readonly reply: InputMaybe<ContentfulPostSortInput>;
   readonly slug: InputMaybe<SortOrderEnum>;
   readonly spaceId: InputMaybe<SortOrderEnum>;
   readonly sys: InputMaybe<ContentfulPostSysSortInput>;
@@ -3253,6 +3261,8 @@ type Query_contentfulPostArgs = {
   name: InputMaybe<StringQueryOperatorInput>;
   node_locale: InputMaybe<StringQueryOperatorInput>;
   parent: InputMaybe<NodeFilterInput>;
+  post: InputMaybe<ContentfulPostFilterListInput>;
+  reply: InputMaybe<ContentfulPostFilterInput>;
   slug: InputMaybe<StringQueryOperatorInput>;
   spaceId: InputMaybe<StringQueryOperatorInput>;
   sys: InputMaybe<ContentfulPostSysFilterInput>;
@@ -3954,21 +3964,25 @@ type SiteFunctionSortInput = {
 };
 
 type SiteGraphqlTypegen = {
+  readonly documentSearchPaths: Maybe<ReadonlyArray<Maybe<Scalars['String']>>>;
   readonly generateOnBuild: Maybe<Scalars['Boolean']>;
   readonly typesOutputPath: Maybe<Scalars['String']>;
 };
 
 type SiteGraphqlTypegenFieldSelector = {
+  readonly documentSearchPaths: InputMaybe<FieldSelectorEnum>;
   readonly generateOnBuild: InputMaybe<FieldSelectorEnum>;
   readonly typesOutputPath: InputMaybe<FieldSelectorEnum>;
 };
 
 type SiteGraphqlTypegenFilterInput = {
+  readonly documentSearchPaths: InputMaybe<StringQueryOperatorInput>;
   readonly generateOnBuild: InputMaybe<BooleanQueryOperatorInput>;
   readonly typesOutputPath: InputMaybe<StringQueryOperatorInput>;
 };
 
 type SiteGraphqlTypegenSortInput = {
+  readonly documentSearchPaths: InputMaybe<SortOrderEnum>;
   readonly generateOnBuild: InputMaybe<SortOrderEnum>;
   readonly typesOutputPath: InputMaybe<SortOrderEnum>;
 };
