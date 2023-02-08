@@ -16,8 +16,10 @@ This project was a mobile game development. The game is kind of social card game
 
 ### - TEAM DEVELOPMENT
 
-Our team did retrospective regularly and learned a lot of things from that.
+Our team did retrospective regularly and learned a lot of things from that.  
+We discussed what we should keep from the previous iteration and what were the problems that happened in the previous iteration and how to solve those problems.
 
-I was able to spot small bugs and problems that I would not have noticed on my own.
-By sharing the team's mistakes, I was able to improve the quality of the code and services.
-Everyone's skills improved by sharing the team's knowledge.
+For example,
+- I was able to spot small bugs and problems that I would not have noticed on my own.
+- By sharing the team's mistakes, I was able to improve the quality of the code and services.
+- Everyone's skills improved by sharing the team's knowledge.
