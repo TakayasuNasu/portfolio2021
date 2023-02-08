@@ -11,3 +11,13 @@ files:
   - social-game01.png
   - social-game02.png
 ---
+
+This project was a mobile game development. The game is kind of social card game. About 5,000 to 10,000 active users played the game per day.
+
+### - TEAM DEVELOPMENT
+
+Our team did retrospective regularly and learned a lot of things from that.
+
+I was able to spot small bugs and problems that I would not have noticed on my own.
+By sharing the team's mistakes, I was able to improve the quality of the code and services.
+Everyone's skills improved by sharing the team's knowledge.
