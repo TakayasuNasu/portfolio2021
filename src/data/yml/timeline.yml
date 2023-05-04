@@ -1,4 +1,13 @@
 - id: 1
+  title: Full Stuck Developer
+  date: October 2021 - May 2023
+  company: Massive Media Inc.
+  text: |-
+    Responsible for front/back end design, implementation, testing and debugging.
+    Created corporate websites with project managers and designers.
+  color: '#F90716'
+
+- id: 1
   title: Full Stuck Developer / Technical Director
   date: Jun 2017 - August 2020
   company: Medix inc.

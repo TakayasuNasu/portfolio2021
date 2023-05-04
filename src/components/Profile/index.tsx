@@ -18,7 +18,7 @@ const Profile: FC = (): JSX.Element => {
             <FaCode color="#2879ff" />
             <H4>Full Stack</H4>
             <p className="describe">
-              i&apos;m familiar with Backend, Frontend, and Mobile programing,
+              I&apos;m familiar with Backend, Frontend, and Mobile programing,
               also I&apos;m good at creating System Architecture.
             </p>
           </article>

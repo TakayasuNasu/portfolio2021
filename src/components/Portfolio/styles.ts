@@ -212,10 +212,6 @@ export const StyledCaseStudy = styled.section`
     }
     p {
       line-height: 1.4;
-      a {
-        color: ${({ theme }) => theme.color.text};
-        text-decoration: underline;
-      }
     }
     > p {
       ${media.greaterThan('large')`
@@ -237,6 +233,23 @@ export const StyledCaseStudy = styled.section`
       text-align: center;
       border-top: 1px solid ${({ theme }) => theme.color.border};
       border-bottom: 1px solid ${({ theme }) => theme.color.border};
+    }
+    a {
+      color: ${({ theme }) => theme.color.text};
+      text-decoration: underline;
+      text-underline-offset: 0.2em;
+    }
+    ul {
+      padding-left: 1.5ch;
+      list-style-type: disc;
+      line-height: 1.8;
+      li:mark {
+        color: ${({ theme }) => theme.color.border};
+      }
+    }
+    strong {
+      font-size: 1.1em;
+      font-weight: 700;
     }
     > *:first-child {
       padding-top: 0;

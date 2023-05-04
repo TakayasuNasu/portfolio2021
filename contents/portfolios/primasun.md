@@ -21,16 +21,14 @@ files:
 
 #### What did I do?
 
-I improved the structure of the website by dividing it into modules, making it easier to manage and update.
+I improved the website's structure by dividing it into modules, making it simpler to manage and update.
 
-This design also made it easier to add new pages. I also created multiple module types and developed corresponding components.
-By using Grapheql to get the data needed to create pages and using switch to set up the modules needed for each page, the user can now display the modules they want in any order they want.
+This design also made adding new pages easier. I created multiple module types and developed corresponding components. By using GraphQL to gather the data needed for creating pages and using a switch to set up the modules required for each page, users can now display the modules they want in any order they choose.
 
-Since React Suspense is not available in Gatsby, we were able to use the Loadable Component instead to improve the site's performance. With these improvements, the website is now more usable and efficient.
-
+Since React Suspense isn't available in Gatsby, we used the Loadable Component instead to enhance the site's performance. With these improvements, the website is now more user-friendly and efficient.
 
 #### - RESULT
 
-The site was well received by the client. It led to a contract to support social media management.
+The client was pleased with the site, which led to a contract for supporting social media management.
 
-##### [Primasun - http://primasun.com/](http://primasun.com/)
+##### [Primasun - https://primasun.com/](https://primasun.com/)
