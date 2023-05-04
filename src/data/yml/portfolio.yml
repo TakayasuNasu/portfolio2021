@@ -1,4 +1,18 @@
 - id: 1
+  img: primasun.png
+  title: Primasun
+  siteUrl: http://primasun.com/
+  pageUrl: /portfolio/primasun/
+  type: CMS
+
+- id: 1
+  img: packetlabs.png
+  title: PacketLabs
+  siteUrl: http://packetlabs.net/
+  pageUrl: /portfolio/packetlabs/
+  type: CMS
+
+- id: 1
   img: s-portal.png
   title: S-Portal
   siteUrl: ''

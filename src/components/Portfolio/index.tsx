@@ -96,8 +96,13 @@ export const Card: FC<ComponentProps> = ({
         <span className="title">{title}</span>
       </VisualBlock>
       <Div className="bottom">
-        <a className="anchor" href={siteUrl}>
-          <FiExternalLink />
+        <a
+          className="anchor"
+          href={siteUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          {siteUrl && <FiExternalLink />}
         </a>
         <Link to={pageUrl}>
           <FiList />

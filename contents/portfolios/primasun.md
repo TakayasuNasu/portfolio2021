@@ -3,7 +3,7 @@ title: 'Primasun'
 slug: primasun
 date: September 2022 - November 2022
 info: Primasun is the leading clinically effective solution for treating sleep disorders. We offer coordinated sleep care, wherever you are on your health journey.
-techStack: React/SPA/Graphql/Contentful
+techStack: TypeScript/Gatsby/Netlify/Contentful
 type: SPA
 client: Medix
 link: ''
@@ -11,15 +11,26 @@ files:
   - primasun.png
 ---
 
-While I was working for my previous company in Japan, our team faced a lot of tasks without enough members to handle them, despite the company's expanding business scale.
-To improve our operational efficiency, we decided to develop a Single-Page-Application using Laravel, Vue.js, and Graphql, and established a deployment pipeline through Github and CirclCI.
+#### The client's request was the following.
+
+- Update their brand image as their business grows
+- Enrich content and simplify management
+- Performance Improvement
+- Mobile Optimization
+
+
+#### What did I do?
+
+I improved the structure of the website by dividing it into modules, making it easier to manage and update.
+
+This design also made it easier to add new pages. I also created multiple module types and developed corresponding components.
+By using Grapheql to get the data needed to create pages and using switch to set up the modules needed for each page, the user can now display the modules they want in any order they want.
+
+Since React Suspense is not available in Gatsby, we were able to use the Loadable Component instead to improve the site's performance. With these improvements, the website is now more usable and efficient.
+
 
 #### - RESULT
 
-Our goal was to share work knowledge using this web application and make it easier for users to find information quickly. As a result, the SPA we created was highly acclaimed and widely used by almost all of our employees on a daily basis.
+The site was well received by the client. It led to a contract to support social media management.
 
-#### - TECH STACK
-
-> [Laravel](https://laravel.com/) is an open-source PHP framework, which is robust and easy to understand. It follows a model-view-controller design pattern. Laravel reuses the existing components of different frameworks which helps in creating a web application. The web application thus designed is more structured and pragmatic.
-
-> [Vue.js](https://vuejs.org/) is a JavaScript framework for building user interfaces. It builds on top of standard HTML, CSS, and JavaScript and provides a declarative and component-based programming model that helps you efficiently develop user interfaces, be they simple or complex.
+##### [Primasun - http://primasun.com/](http://primasun.com/)
