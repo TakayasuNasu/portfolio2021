@@ -13,6 +13,7 @@ import Skils from '@/components/Skills'
 import Portfolio from '@/components/Portfolio'
 import Profile from '@/components/Profile'
 import Timeline from '@/components/Timeline'
+import Blogs from '@/components/Blogs'
 import Contact from '@/components/Contact'
 import Map from '@/components/Map'
 
@@ -43,6 +44,7 @@ const Page: FC = () => (
       <Portfolio />
       <Profile />
       <Timeline />
+      <Blogs />
       <div className="contact-map">
         <Contact />
         <Map />

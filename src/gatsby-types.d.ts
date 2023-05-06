@@ -5334,6 +5334,11 @@ type allPageQueryVariables = Exact<{ [key: string]: never; }>;
 
 type allPageQuery = { readonly pages: { readonly nodes: ReadonlyArray<{ readonly path: string }> } };
 
+type ContentfulPostsQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+type ContentfulPostsQuery = { readonly allContentfulPost: { readonly nodes: ReadonlyArray<{ readonly name: string | null, readonly slug: string | null, readonly publishedDate: string | null, readonly featured: boolean | null, readonly excerpt: string | null, readonly hashtags: ReadonlyArray<{ readonly name: string | null } | null> | null, readonly heroImage: { readonly title: string | null, readonly description: string | null, readonly width: number | null, readonly height: number | null, readonly gatsbyImageData: import('gatsby-plugin-image').IGatsbyImageData | null } | null }> } };
+
 type GatsbyImageSharpFixedFragment = { readonly base64: string | null, readonly width: number, readonly height: number, readonly src: string, readonly srcSet: string };
 
 type GatsbyImageSharpFixed_noBase64Fragment = { readonly width: number, readonly height: number, readonly src: string, readonly srcSet: string };
